@@ -1,2 +1,2 @@
 # Maps
-The maps that are available on the PagodaNetwork
+The maps that are synchronized with the servers on the Pagoda Network.
