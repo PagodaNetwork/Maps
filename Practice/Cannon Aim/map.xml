@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Cannon Aim</name>
+<version>1.0.0</version>
+<objective>oiecy.</objective>
+<include src="tutorial.xml"/>
+<authors>
+    <author uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7"/> <!-- Prodigy4532 -->
+    <author uuid="44bc8f79-ac8b-4aae-99a0-09d2fbd65853"/> <!-- AndresJR23 -->
+</authors>
+<teams>
+   <team id="red" color="dark red" max="50">Red</team>
+   <team id="blue" color="blue" max="0">Blue</team>
+</teams>
+<kits>
+	<kit name="spawn">
+		<item unbreakable="true" slot="0">diamond pickaxe</item>
+		<item amount="64" slot="2">smooth brick</item>
+		<item amount="64" slot="29">smooth brick</item>
+		<item amount="64" slot="20">smooth brick</item>
+		<item amount="64" slot="11">smooth brick</item>
+		<item amount="32" slot="1">nether fence</item>
+		<item amount="32" slot="28">ladder</item>
+		<item amount="32" slot="19">44</item>
+		<item amount="32" slot="3">redstone</item>
+		<item amount="32" slot="4">stone button</item>
+		<item amount="32" slot="31">lever</item>
+		<item amount="64" slot="5">tnt</item>
+		<item amount="64" slot="32">tnt</item>
+		<item amount="64" slot="23">tnt</item>
+		<item amount="64" slot="14">tnt</item>
+		<item slot="6">water bucket</item>
+		<item slot="33">water bucket</item>
+		<item slot="24">water bucket</item>
+		<item slot="15">water bucket</item>
+		<item slot="8" amount="64">bread</item>
+		<item slot="7" amount="16">dispenser</item>
+		<item slot="25" amount="16">76</item>
+		<item slot="34" amount="8">redstone block</item>
+		<item slot="16" amount="16">356</item>
+		<potion duration="oo" amplifier="1">Speed</potion>
+		<item slot="9" name="`a`lIcarus Blade">wood sword</item>
+	</kit>
+</kits>
+<spawns>
+    <spawn team="red" kit="spawn">
+        <regions yaw="-90">
+            <cuboid min="13.5,15,-17.5" max="13.5,15,-16.5"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="spawn">
+        <regions yaw="-90">
+            <cuboid min="13.5,15,-17.5" max="13.5,15,-16.5"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-90">
+            <cuboid min="1.5,25,-0.5" max="-0.5,25,1.5"/>
+        </regions>
+    </default>
+</spawns>
+<destroyables name="10 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="31,21,-19" max="35,15,-14"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="15 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="36,21,-14" max="40,15,-9"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="20 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="41,21,-9" max="45,15,-4"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="25 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="46,21,-4" max="50,15,0"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="30 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="51,21,0" max="55,15,5"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="35 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="56,21,5" max="60,15,10"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="40 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="61,21,10" max="65,15,15"/></region>
+    </destroyable>
+</destroyables>
+<destroyables name="45 Blocks" materials="stained glass:0; emerald block" completion="100%" sparks="true" show-progress="true">
+    <destroyable owner="blue">
+       <region><cuboid min="66,21,15" max="70,15,20"/></region>
+    </destroyable>
+</destroyables>
+<itemremove>
+	<item>diamond pickaxe</item>
+	<item>redstone block</item>
+	<item>ladder</item>
+	<item>tnt</item>
+	<item>redstone</item>
+	<item>fence</item>
+	<item>155</item>
+	<item>stone button</item>
+	<item>water bucket</item>
+	<item>dispenser</item>
+	<item>bread</item>
+	<item>356</item>
+	<item>76</item>
+	<item>44</item>
+	<item>lever</item>
+	<item>stained clay</item>
+	<item>123</item>
+	<item>wood sword</item>
+	<item>book</item>
+	<item>17</item>
+	<item>89</item>
+	<item>164</item>
+	<item>89</item>
+	<item>trapdoor</item>
+</itemremove>
+<maxbuildheight>25</maxbuildheight>
+<tutorial>
+    <stage title="Cannon Aim">
+        <message>
+            <line>`rThis is Cannon Aim</line>
+            <line>You need break the monument with TNT.</line>
+        </message>
+        <teleport>
+            <point yaw="-105" pitch="35">1,27,11</point>
+        </teleport>
+    </stage>
+    <stage title="Cannons">
+        <message>
+            <line>`rCannon area</line>
+            <line>Make here your cannons.</line>
+        </message>
+        <teleport>
+            <point yaw="1" pitch="15">20,16,-20</point>
+        </teleport>
+    </stage>
+    <stage title="Monuments">
+        <message>
+            <line>`rYou need break this</line>
+            <line>With tnt cannons.</line>
+        </message>
+        <teleport>
+            <point yaw="-105" pitch="18">27,19,1</point>
+        </teleport>
+    </stage>
+</tutorial>
+<filters>
+    <filter name="only-blue">
+        <team>blue</team>
+    </filter>
+    <filter name="only-red">
+        <team>red</team>
+    </filter>
+    <filter name="no-void">
+        <deny>
+            <void/>
+        </deny>
+    </filter>
+</filters>
+<regions>
+    <apply block="no-void" message="You may not build in the void">
+        <negative>
+            <rectangle name="plataform" min="24,-20" max="16,21"/>
+            <cuboid min="31,21,-19" max="35,15,-14"/>
+            <cuboid min="36,21,-14" max="40,15,-9"/>
+            <cuboid min="41,21,-9" max="45,15,-4"/>
+            <cuboid min="46,21,-4" max="50,15,0"/>
+            <cuboid min="51,21,0" max="55,15,5"/>
+            <cuboid min="56,21,5" max="60,15,10"/>
+            <cuboid min="61,21,10" max="65,15,15"/>
+            <cuboid min="66,21,15" max="70,15,20"/>
+        </negative>
+    </apply>
+    <apply block="deny-all" message="Nope :p">
+        <cuboid min="23,13,-20" max="16,0,21"/>
+    </apply>
+</regions>
+</map>

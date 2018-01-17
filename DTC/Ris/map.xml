@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+
+<map proto="1.4.0">
+
+<name>Ris TE</name>
+
+<version>1.0.0</version>
+
+<objective>Destroy enemy's core.</objective>
+
+<authors>
+    <author uuid="e7ff5c65-9fef-4b65-96c3-e33871507c2d"/> <!--JuanOfChristmas-->
+</authors>
+
+<teams>
+
+   <team id="red" color="dark red" max="6">Red</team>
+
+   <team id="lime" color="green" max="6">Lime</team>
+
+</teams>
+
+<cores material="obsidian" leak="2" mode-changes="true">
+    <core team="lime">
+        <region><cuboid min="-34,36,-3" max="-27,27,4"/></region>
+    </core>
+    <core team="red">
+        <region><cuboid min="28,36,-3" max="35,27,3"/></region>
+    </core>
+</cores>
+
+<modes>
+
+    <mode after="15m" material="gold block" name="Gold Core Mode"/>
+
+</modes>
+
+<kits>
+
+    <kit name="spawn">
+
+        <item slot="0">stone sword</item>
+
+        <item slot="1">bow</item>
+
+        <item slot="2" amount="64">wood</item>
+
+        <item slot="3" amount="32">glass</item>
+
+        <item slot="28" amount="64">arrow</item>
+
+        <item slot="8" amount="32">bread</item>
+
+    </kit>
+
+</kits>
+
+<itemremove>
+
+    <item>obsidian</item>
+
+    <item>sponge</item>
+
+    <item>stone sword</item>
+
+    <item>bread</item>
+
+    <item>bow</item>
+
+</itemremove>
+
+<toolrepair>
+
+    <tool>stone sword</tool>
+
+    <tool>bow</tool>
+
+</toolrepair>
+
+<maxbuildheight>45</maxbuildheight>
+
+<timelock>on</timelock>
+
+<regions>
+
+    <rectangle name="play" min="-60,-32" max="59,33"/>
+
+    <apply block="deny-all" message="You may not interact with blocks outside the playing field.">
+
+        <negative>
+
+            <region name="play"/>
+
+        </negative>
+
+    </apply>
+
+    <apply enter="only-red" message="You may not enter the enemy team's spawn!">
+
+        <rectangle min="-58,-7.3" max="-70,4.3"/>
+
+    </apply>
+
+    <apply enter="only-red" message="You may not enter the enemy team's spawn!">
+
+        <rectangle min="59,8" max="71,-3"/>    
+
+    </apply>
+
+</regions>
+
+<filters>
+
+    <filter name="only-lime">
+
+        <team>purple</team>
+
+    </filter>
+
+    <filter name="only-red">
+
+        <team>red</team>
+
+    </filter>
+
+</filters>
+
+<spawns>
+
+    <spawn team="red" kit="spawn">
+
+        <regions yaw="90">
+
+            <block>68.3,25,0.5</block>
+
+        </regions>
+
+    </spawn>
+
+    <spawn team="lime" kit="spawn">
+
+        <regions yaw="-90">
+
+            <block>-67.3,25,0.5</block>
+
+        </regions>
+
+    </spawn>
+
+    <default>
+
+        <regions yaw="180">
+
+            <block>0,61,63</block> 
+
+        </regions>
+
+    </default>
+
+</spawns>
+
+<time result="objectives">30m</time>
+
+</map>

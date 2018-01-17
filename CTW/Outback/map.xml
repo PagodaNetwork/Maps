@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<map proto="1.3.2">
+<name>Outback</name>
+<version>2.0.0</version>
+<objective>Capture the two enemy's wools!</objective>
+<authors>
+    <author>rockymine</author>
+</authors>
+<contributors>
+    <contributor contribution="XML">orky48</contributor>
+    <contributor contribution="XML and Fixing">ItsMiiOlly</contributor>
+</contributors>
+<teams>
+    <team color="yellow" max="36">Yellow Team</team>
+    <team color="dark purple" max="36">Purple Team</team>
+</teams>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">stone sword</item>
+        <item slot="1" damage="-3000" enchantment="arrow infinite:1">bow</item>
+        <item slot="28">arrow</item>
+        <item slot="2" enchantment="dig speed:1" damage="-3000">iron pickaxe</item>
+        <item slot="3" enchantment="dig speed:1">iron axe</item>
+        <item slot="4" amount="32" damage="1">wood</item>
+        <item slot="6" amount="32">cooked beef</item>
+        <item slot="7" amount="4">golden apple</item>
+        <item slot="8" amount="3">web</item>
+        <item slot="17">iron spade</item>
+        <boots enchantment="protection fall:2" damage="-3000">iron boots</boots>
+    </kit>
+    <kit name="yellow-spawn" parents="spawn">
+        <item slot="5" damage="4" amount="32">stained clay</item>
+        <chestplate color="E5E533">leather chestplate</chestplate>
+    </kit>
+    <kit name="purple-spawn" parents="spawn">
+        <item slot="5" damage="10" amount="32">stained clay</item>
+        <chestplate color="800080">leather chestplate</chestplate>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="yellow" kit="yellow-spawn" yaw="-180">
+        <cylinder base="0,9,-76" radius="2" height="0"/>
+    </spawn>
+    <spawn team="purple" kit="purple-spawn" yaw="0">
+        <cylinder base="0,9,77" radius="2" height="0"/>
+    </spawn>
+    <default yaw="0">
+        <cylinder base="0,50,0" radius="3" height="0"/>
+    </default>
+</spawns>
+<filters>
+    <filter name="only-yellow">
+        <team>yellow</team>
+    </filter>
+    <filter name="only-purple">
+        <team>purple</team>
+    </filter>
+    <filter name="deny-void">
+        <deny>
+            <void/>
+        </deny>
+    </filter>
+    <filter name="iron-water-only" parents="deny-blocks">
+        <allow>
+            <block>iron block</block>
+            <block>stationary water</block>
+        </allow>
+    </filter>
+    <filter name="breakable-woolroom" parents="deny-blocks">
+        <allow>
+            <block>stained glass</block>
+            <block>web</block>
+        </allow>
+    </filter>
+</filters>
+<regions>
+    <union name="denied-area">
+        <rectangle name="denied-area-yellow" min="-28,-142" max="27,-73"/>
+        <rectangle name="denied-area-purple" min="-28,73" max="29,141"/>
+    </union>
+    <union name="yellow-wool-rooms">
+        <rectangle name="magenta-wool" min="-29,-122" max="-43,-136"/>
+        <rectangle name="pink-wool" min="29,-122" max="43,-136"/>
+    </union>
+    <union name="purple-wool-rooms">
+        <rectangle name="blue-wool" min="29,122" max="43,136"/>
+        <rectangle name="lightblue-wool" min="-29,122" max="-43,136"/>
+    </union>
+    <union name="spawns">
+        <rectangle name="purple-spawn" min="-16,67" max="12,109"/>
+        <rectangle name="yellow-spawn" min="-13,-109" max="16,-66"/>
+    </union>
+    <apply block="deny-void" message="You may not build in the void!">
+        <negative>
+            <rectangle min="-44,-144" max="44,144"/>
+        </negative>
+        <region name="denied-area"/>
+    </apply>
+    <apply block="deny-certain" use="deny-certain">
+        <circle center="0,0" radius="3"/>
+    </apply>
+    <apply block="breakable-woolroom">
+        <region name="yellow-wool-rooms"/>
+        <region name="purple-wool-rooms"/>
+    </apply>
+    <apply enter="only-purple" message="Only purple may enter this area!">
+        <region name="yellow-wool-rooms"/>
+        <region name="purple-spawn"/>
+    </apply>
+    <apply enter="only-yellow" message="Only yellow may enter this area!">
+        <region name="purple-wool-rooms"/>
+        <region name="yellow-spawn"/>
+    </apply>
+    <apply block-break="iron-water-only" block-place="deny-all allow-world" message="You may only break iron or pick up water!">
+        <region name="spawns"/>
+    </apply>
+</regions>
+<itemremove>
+    <item>leather chestplate</item>
+    <item>iron boots</item>
+    <item>stained clay</item>
+    <item>cooked beef</item>
+    <item>web</item>
+    <item>wood</item>
+    <item>emerald block</item>
+    <item>beacon</item>
+    <item>iron axe</item>
+    <item>iron spade</item>
+</itemremove>
+<toolrepair>
+    <tool>arrow</tool>
+    <tool>stone sword</tool>
+    <tool>iron pickaxe</tool>
+    <tool>bow</tool>
+</toolrepair>
+<maxbuildheight>28</maxbuildheight>
+<wools team="yellow">
+    <wool color="blue">
+        <block>-5,10,-78</block>
+    </wool>
+    <wool color="light blue">
+        <block>5,10,-78</block>
+    </wool>
+</wools>
+<wools team="purple">
+    <wool color="magenta">
+        <block>-5,10,78</block>
+    </wool>
+    <wool color="pink">
+        <block>5,10,78</block>
+    </wool>
+</wools>
+</map>

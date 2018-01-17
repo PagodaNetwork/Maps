@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Ambush</name>
+<version>1.0.0</version>
+<objective>Be the team with the most points after 10 minutes.</objective>
+<authors>
+    <author uuid="c29bef37-d8e2-42a9-b746-04f2df78f374"/> <!-- LEGODTHEBUILDER -->
+    <author uuid="9116d3fa-1400-4ada-aecd-2eae1d73e383"/> <!-- Xuph -->
+    <author uuid="fb490080-5ca0-4f65-97cc-f62d1468b193"/> <!-- ImRaging -->
+</authors>
+<timelock>on</timelock>
+<teams>
+   <team id="red" color="dark red" min="1" max="8">Red</team>
+   <team id="blue" color="blue" min="1" max="8">Blue</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="-90">
+            <cuboid min="-14,176,-52.5" max="-14,176,-52.5"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="90">
+            <cuboid min="16,176,70.5" max="16,176,70.5"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="1.5,200,9.5" max="1.5,200,9.5"/>
+        </regions>
+    </default>
+</spawns>
+<score>
+    <limit>100</limit>
+    <time>600</time>
+    <kills>1</kills>
+    <deaths>1</deaths>
+    <box value="2" filter="no-blue" cooldown="10">
+		<cuboid name="redscore1" min="13,162,72" max="12,159,69"/>  
+    </box>
+    <box value="2" filter="no-red" cooldown="10">
+		<cuboid name="bluescore1" min="-10,162,-53" max="-9,159,-50"/>             		
+    </box>
+</score>
+<portals>
+    <portal x="@-14" y="@176" z="@-52" yaw="@-90">
+		    <cuboid min="13,162,72" max="12,159,69"/>   
+    </portal>
+    <portal x="@16" y="@176" z="@70" yaw="@90">
+		    <cuboid min="-10,162,-53" max="-9,159,-50"/>     
+    </portal>
+</portals>
+<filters>
+    <filter name="no-red" parents="deny-all">
+        <allow>
+            <team>blue</team>
+
+        </allow>
+    </filter>
+    <filter name="no-blue" parents="deny-all">
+        <allow>
+            <team>red</team>
+        </allow>
+    </filter>
+</filters>
+<regions>
+    <apply block="deny-all" message="You are not allowed to build in this map.">
+         <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+    <apply kit="portal" enter="no-blue" message="You may not enter your own scorebox.">
+		<cuboid min="13,162,72" max="12,159,69"/>    
+    </apply>
+    <apply kit="portal" enter="no-red" message="You may not enter your own scorebox.">
+        <cuboid min="-10,162,-53" max="-9,159,-50"/>  	  
+    </apply>
+</regions>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">iron sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="2" amount="1">golden apple</item>
+        <item slot="5" amount="16">golden carrot</item>
+        <item slot="8" amount="16">arrow</item>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+        <potion duration="oo">night vision</potion>
+        <helmet damage="-3000">iron helmet</helmet>
+        <boots damage="-3000">iron boots</boots>
+    </kit>
+    <kit name="red" parents="spawn">  
+        <chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
+        <leggings color="cd0000" damage="-3000">leather leggings</leggings>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <chestplate color="0066cc" damage="-3000">leather chestplate</chestplate>
+        <leggings color="0066cc" damage="-3000">leather leggings</leggings>
+    </kit>
+    <kit name="portal">
+        <potion duration="5" amplifier="100">damage resistance</potion>
+        <potion duration="oo">night vision</potion>
+    </kit>
+</kits>
+<itemremove>
+    <item>iron sword</item>
+    <item>iron helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>iron boots</item>
+    <item>bow</item>
+    <item>golden carrot</item>
+    <item>arrow</item>
+</itemremove>
+</map>

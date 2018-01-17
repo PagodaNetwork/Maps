@@ -1,0 +1,287 @@
+<map proto="1.4.0">
+
+<name>Archer duel</name>
+
+<version>1.0.0</version>
+
+<objective>Show your skill with the bow!</objective>
+
+<authors>
+
+    <author uuid="e7ff5c65-9fef-4b65-96c3-e33871507c2d"/> <!-- Sr_Juan -->
+
+    <author uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7"/> <!-- Prodigy4532 | BANNED -->
+
+</authors>
+
+<broadcasts>
+
+    <alert after="1s">Start in...</alert>
+
+    <alert after="2s">5</alert>
+
+    <alert after="3s">4</alert>
+
+    <alert after="4s">3</alert>
+
+    <alert after="5s">2</alert>
+
+    <alert after="6s">1</alert>
+
+</broadcasts>
+
+<destroyables name="Spawn-Tubes" materials="stained glass:11; stained glass:14" show="false" mode-changes="true">
+
+    <destroyable owner="blue">
+
+       <region><cuboid min="15,12,-21" max="21,5,-15"/></region>
+
+    </destroyable>
+
+    <destroyable owner="red">
+
+       <region><cuboid min="8,13,-2" max="2,6,-8"/></region>
+
+    </destroyable>
+
+</destroyables>
+
+<modes>
+
+    <mode after="7s" material="air" name="Show your bow Skills!!!"/>
+
+</modes>
+
+<blitz>
+
+    <lives>1</lives>
+
+    <broadcastLives>true</broadcastLives>
+
+    <map game="Archer Duel"/>
+
+</blitz>
+
+<include src="blitz-global.xml"/>
+
+<teams>
+
+    <team id="red-team" color="dark red" max="1" max-overfill="1">Red Player</team>
+
+    <team id="blue-team" color="blue" max="1" max-overfill="1">Blue Player</team>
+
+</teams>
+
+<hunger>
+
+    <depletion>off</depletion>
+
+</hunger>
+
+<filters>
+
+</filters>
+
+<regions>
+
+    <cuboid id="red-glass" min="8,13,-2" max="2,6,-8"/>
+
+    <cuboid id="blue-glass" min="15,12,-21" max="21,5,-15"/>
+
+    <apply block="never"/>
+
+</regions>
+
+<kits>
+
+    <kit name="spawn">
+
+        <item slot="0" enchantment="arrow infinite:1">bow</item>
+
+        <item slot="27" amount="1">arrow</item>
+
+    </kit>
+
+    <kit name="red" parents="spawn">
+
+        <item slot="1" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="2" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="3" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="4" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="5" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="6" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="7" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="8" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="9" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="10" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="11" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="12" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="13" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="14" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="15" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="16" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="17" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="18" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="19" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="20" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="21" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="22" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="23" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="24" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="25" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="26" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="28" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="29" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="30" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="31" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="32" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="33" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="34" amount="1" damage="14">stained glass pane</item>
+
+        <item slot="35" amount="1" damage="14">stained glass pane</item>
+
+    </kit>
+
+    <kit name="blue" parents="spawn">
+
+        <item slot="1" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="2" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="3" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="4" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="5" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="6" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="7" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="8" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="9" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="10" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="11" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="12" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="13" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="14" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="15" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="16" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="17" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="18" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="19" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="20" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="21" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="22" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="23" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="24" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="25" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="26" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="28" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="29" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="30" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="31" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="32" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="33" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="34" amount="1" damage="11">stained glass pane</item>
+
+        <item slot="35" amount="1" damage="11">stained glass pane</item>
+
+    </kit>
+
+</kits>
+
+<spawns>
+
+    <spawn team="red-team" kit="red">
+
+        <regions yaw="-135">
+
+            <point>5.5,8,-4.5</point>
+
+        </regions>
+
+    </spawn>
+
+    <spawn team="blue-team" kit="blue">
+
+        <regions yaw="45">
+
+            <point>18.5,8,-17.5</point>
+
+        </regions>
+
+    </spawn>
+
+    <default>
+
+        <regions yaw="135">
+
+            <point>22.5,13,-0.5</point>
+
+        </regions>
+
+    </default>
+
+</spawns>
+
+<timelock>on</timelock>
+
+</map>

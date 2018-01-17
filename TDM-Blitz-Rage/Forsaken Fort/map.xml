@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<map proto="1.3.5">
+    <include src="blitz-global.xml" />
+    <name>Forsaken Forst</name>
+    <version>1.0.2</version>
+    <objective>Eliminate the other team within 6 minutes! Remember, you don't regenerate health!</objective>
+    <authors>
+        <author>minimitch0199</author>
+    </authors>
+    <contributors>
+        <contributor contribution="Name suggestions">HuskeMutt</contributor>
+    </contributors>
+    <blitz>
+        <time>6m</time>
+        <lives>1</lives>
+        <broadcastLives>false</broadcastLives>
+        <title>Blitz: UHC</title>
+    </blitz>
+    <teams>
+        <team color="dark red" max="8" max-overfill="12">Red Team</team>
+        <team color="blue" max="8" max-overfill="12">Blue Team</team>
+    </teams>
+    <spawns>
+        <spawn team="red" kit="red" yaw="-90">
+            <block>-11,52.5,75</block>
+        </spawn>
+        <spawn team="bue" kit="blue" yaw="90">
+            <block>11,52.5,-8</block>
+        </spawn>
+        <default kit="default" yaw="-180">
+            <block>0,65.5,0</block>
+        </default>
+    </spawns>
+    <kits>
+        <kit name="spawn" force="true">
+            <item slot="0">stone sword</item>
+            <item slot="1">bow</item>
+            <item slot="8">golden apple</item>
+            <item slot="28" amount="24">arrow</item>
+            <chestplate>gold chestplate</chestplate>
+            <boots>iron boots</boots>
+        </kit>
+        <kit name="red" parents="spawn">
+            <helmet color="FF0000">leather helmet</helmet>
+        </kit>
+        <kit name="blue" parents="spawn">
+            <helmet color="0000FF">leather helmet</helmet>
+        </kit>
+    </kits>
+    <killreward>
+        <item amount="1">golden apple</item>
+    </killreward>
+    <regions>
+        <apply block="deny-blocks">
+            <rectangle min="-oo,-oo" max="oo,oo" />
+        </apply>
+    </regions>
+    <gamerules>
+        <doDaylightCycle>false</doDaylightCycle>
+        <naturalRegeneration>false</naturalRegeneration>
+    </gamerules>
+    <hunger>
+        <depletion>off</depletion>
+    </hunger>
+    <itemremove>
+        <item>gold chestplate</item>
+        <item>leather helmet</item>
+        <item>iron boots</item>
+        <item>golden apple</item>
+    </itemremove>
+    <toolrepair>
+        <tool>stone sword</tool>
+        <tool>bow</tool>
+    </toolrepair>
+</map>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Fly</name>
+<version>1.0.0</version>
+<objective>La wea fome.</objective>
+<authors>
+    <author uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7"/> <!-- Prodigy4532 -->
+    <author uuid="5e1794b8-48e1-4df4-9f26-bc42e2224e4c"/> <!-- sanluis-->
+    <author uuid="9864ec1a-62b9-4a7a-8ed3-3f2f861c4e77"/> <!-- lewzz -->
+</authors>
+<teams>
+   <team id="red" color="dark red" min="1" max="50">Red</team>
+   <team id="blue" color="blue" min="0" max="0">Blue</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="0">
+            <cuboid min="18.5,12,-16.5" max="18.5,12,-16.5"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="0">
+            <cuboid min="18.5,12,-16.5" max="18.5,12,-16.5"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0" kit="all">
+            <cuboid min="18.5,12,-16.5" max="18.5,12,-16.5"/>
+        </regions>
+    </default>
+</spawns>
+<destroyables name="tu hermana" materials="glass" completion="100%" mode-changes="true" show="false">
+    <destroyable owner="blue">
+       <region><cuboid min="22,16,-12" max="12,11,-16"/></region>
+    </destroyable>
+    <destroyable owner="red">
+       <region><cuboid min="21,17,-18" max="14,8,-18"/></region>
+    </destroyable>
+</destroyables>
+<timelock>on</timelock>
+<kits>
+    <kit name="all" potion-particles="false">
+      <potion duration="oo" ambient="true">night vision</potion>
+    </kit>
+    <kit name="team" parents="all">
+      <item slot="0">diamond sword</item>
+      <item slot="1">water bucket</item>
+
+      <item slot="3" amount="64">tnt</item>
+      <item slot="4" amount="64">tnt</item>
+      <item slot="5" amount="64">tnt</item>
+
+      <item slot="7" amount="64" damage="1">golden apple</item>
+      <item slot="8" amount="32">bread</item>
+    </kit>
+    <kit name="red" parents="team">
+      <helmet locked="true">diamond helmet</helmet>
+      <chestplate locked="true">diamond chestplate</chestplate>
+      <leggings locked="true">diamond leggings</leggings>
+      <boots locked="true">diamond boots</boots>
+    </kit>
+    <kit name="blue" parents="team">
+      <helmet locked="true">diamond helmet</helmet>
+      <chestplate locked="true">diamond chestplate</chestplate>
+      <leggings locked="true">diamond leggings</leggings>
+      <boots locked="true">diamond boots</boots>
+    </kit>
+  </kits>
+<modes>
+    <mode after="1s" material="air" name="Air"/>
+</modes>
+
+<blitz/>
+</map>

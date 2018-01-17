@@ -1,0 +1,213 @@
+info:
+  title: Quintus Remix
+  world: QuintusRemix
+  version: 1.0
+  type: ctw
+  creators:
+  - G_SKIPPY
+  - Hacktivism
+  spawn: -30.5,90.5,-839.5,-90,0
+
+regions:
+  reward-gapples:
+    type: global
+    flags:
+      kill_player:
+        who: '*'
+        allow: true
+        triggers:
+          give_loadout:
+            loadout:
+              0:
+                item: golden_apple
+  yellow-spawn:
+    type: cylinder
+    center: 40,32,-777
+    radius: 9
+    height: 6
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build in the spawn area.'
+        priority: 5
+  yellow-path:
+    type: cuboid
+    min: 41,32,-786
+    max: 39,35,-813
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build in this pathway.'
+  green-spawn:
+    type: cylinder
+    center: 40,32,-903
+    radius: 9
+    height: 6
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build in the spawn area.'
+        priority: 5
+  green-path:
+    type: cuboid
+    min: 41,35,-867
+    max: 39,32,-895
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build in this pathway.'
+  red-wool-room:
+    type: cuboid
+    min: 68,27,-783
+    max: 84,39,-769
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build near the wool room.'
+      enter:
+        who: 'yellow'
+        message: '&cYou may not enter your own wool room.'
+  blue-wool-room:
+    type: cuboid
+    min: -4,27,-783
+    max: 12,39,-769
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build near the wool room.'
+      enter:
+        who: 'yellow'
+        message: '&cYou may not enter your own wool room.'
+  purple-wool-room:
+    type: cuboid
+    min: -4,39,-911
+    max: 12,27,-897
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build near the wool room.'
+      enter:
+        who: 'green'
+        message: '&cYou may not enter your own wool room.'
+  orange-wool-room:
+    type: cuboid
+    min: 68,27,-911
+    max: 84,39,-897
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not build near the wool room.'
+      enter:
+        who: 'green'
+        message: '&cYou may not enter your own wool room.'
+  purple-wool-monument:
+    type: point
+    point: 41,34,-769
+    flags:
+      build:
+        who: '*'
+        allow: true
+        priority: 10
+  orange-wool-monument:
+    type: point
+    point: 39,34,-769
+    flags:
+      build:
+        who: '*'
+        allow: true
+        priority: 10
+  red-wool-monument:
+    type: point
+    point: 39,34,-911
+    flags:
+      build:
+        who: '*'
+        allow: true
+        priority: 10
+  blue-wool-monument:
+    type: point
+    point: 41,34,-911
+    flags:
+      build:
+        who: '*'
+        allow: true
+        priority: 10
+    
+remove-drops:
+- leather helmet
+- leather chestplate
+- leather leggings
+- leather boots
+- log
+- glass
+- golden_apple
+
+repair-drops:
+- stone sword
+- bow
+- diamond pickaxe
+
+loadout:
+  effects:
+  - damage resistance:5,5
+  helmet:
+    item: leather helmet
+  chestplate:
+    item: leather chestplate
+  leggings:
+    item: leather leggings
+  boots:
+    item: leather boots
+  0:
+    item: stone sword
+  1:
+    item: bow
+    enchants:
+    - arrow infinite:5
+  2:
+    item: diamond pickaxe
+    enchants:
+    - dig speed:1
+  3:
+    item: golden apple
+    amount: 3
+  4:
+    item: glass
+    amount: 64
+  5:
+    item: log
+    amount: 64
+  6:
+    item: cooked fish
+    amount: 8
+  28:
+    item: arrow
+    amount: 1
+
+teams:
+  yellow:
+    spawn: 40.5,34.5,-776.5,180,0
+    title: Yellow Team
+    max: 20
+    wools:
+      purple:
+        name: Purple Wool
+        chest: 4,33,-905
+        monument: 41,34,-769
+      orange:
+        name: Orange Wool
+        chest: 76,33,-905
+        monument: 39,34,-769
+  green:
+    spawn: 40.5,34.5,-902.5,0,0
+    title: Green Team
+    max: 20
+    wools:
+      red:
+        name: Red Wool
+        chest: 76,33,-775
+        monument: 39,34,-911
+      blue:
+        name: Blue Wool
+        chest: 4,33,-775
+        monument: 41,34,-911

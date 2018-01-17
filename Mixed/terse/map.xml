@@ -1,0 +1,122 @@
+<map proto="1.4.0">
+<name>Terse</name>
+<version>1.0.4</version>
+<objective>Destroy the enemy monument and leak their core!</objective>
+<authors>
+    <author uuid="a4266139-34f3-46c5-a730-f8828376a15a"/> <!--   LArrowHead   -->
+    <author uuid="dff980ed-9f69-491e-b79c-30c21350baf2"/> <!--   DoomyBoy   -->
+</authors>
+<teams>
+    <team id="red" color="dark red" max="5">Red</team>
+    <team id="blue" color="blue" max="5">Blue</team>
+</teams>
+<respawn delay="5s"/>
+<kits>
+    <kit id="spawn">
+        <item slot="0" material="diamond sword"/>
+        <item slot="1" material="bow"/>
+        <item slot="2" enchantment="dig speed:3;durability:2" material="iron pickaxe"/>
+        <item slot="3" material="iron axe"/>
+        <item slot="4" amount="64" material="cooked beef"/>
+        <item slot="5" amount="64" damage="5" material="wood"/>
+        <item slot="6" amount="32" damage="5" material="wood"/>
+        <item slot="7" amount="32" material="glass"/>
+        <item slot="8" amount="48" material="arrow"/>
+    </kit>
+</kits>
+<filters>
+    <team id="red-only">red</team>
+    <team id="blue-only">blue</team>
+    <not id="not-redstone-torches">
+        <any>
+            <material>redstone torch on</material>
+            <material>redstone torch off</material>
+        </any>
+    </not>
+</filters>
+<regions>
+    <rectangle id="build-region" min="61,-70" max="-18,-21"/>
+    <rectangle id="red-spawn" min="60,-21" max="91,-28"/>
+    <rectangle id="blue-spawn" min="-17,-28" max="-48,-21"/>
+    <apply enter="red-only" region="red-spawn" message="You may not enter this spawn!"/>
+    <apply enter="blue-only" region="blue-spawn" message="You may not enter this spawn!"/>
+    <apply block="never" message="You may not modify the spawns.">
+        <region>
+            <region id="red-spawn"/>
+            <region id="blue-spawn"/>
+        </region>
+    </apply>
+    <apply block="never" message="You may not modify blocks outside the playing field.">
+        <region>
+            <negative>
+                <region id="build-region"/>
+            </negative>
+        </region>
+    </apply>
+    <apply block="not-redstone-torches" region="everywhere" message="You may not use redstone torches on this map!"/>
+</regions>
+<spawns>
+    <spawn team="red" kit="spawn">
+        <regions>
+            <point yaw="90">89,4,-24.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="spawn">
+        <regions>
+            <point yaw="-90">-46,4,-24.5</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions>
+            <point yaw="0">21.5,16,-83.5</point>
+        </regions>
+    </default>
+</spawns>
+<modes>
+    <mode after="10m" material="gold block" name="GOLD CORE"/>
+    <mode after="15m" material="glass" name="GLASS CORE"/>
+</modes>
+<cores name="Core" material="obsidian" leak="2" proximity-metric="closest kill" mode-changes="true">
+    <core team="red">
+        <region>
+            <cuboid min="45,12,-59" max="48,16,-62"/>
+        </region>
+    </core>
+    <core team="blue">
+        <region>
+            <cuboid min="-2,12,-62" max="-5,16,-59"/>
+        </region>
+    </core>
+</cores>
+<destroyables name="Monument" materials="gold block" completion="100%" mode-changes="false">
+    <destroyable id="red-monument" owner="red">
+        <region>
+            <cuboid min="48,6,-36" max="45,12,-39"/>
+        </region>
+    </destroyable>
+    <destroyable id="blue-monument" owner="blue">
+        <region>
+            <cuboid min="-5,6,-36" max="-2,12,-39"/>
+        </region>
+    </destroyable>
+</destroyables>
+<toolrepair>
+    <tool>diamond sword</tool>
+    <tool>bow</tool>
+    <tool>iron pickaxe</tool>
+    <tool>iron axe</tool>
+</toolrepair>
+<itemremove>
+    <item>gold block</item>
+    <item>obsidian</item>
+    <item>wood</item>
+    <item>glass</item>
+    <item>smooth brick</item>
+    <item>arrow</item>
+    <item>cooked beef</item>
+    <item>redstone torch on</item>
+    <item>redstone torch off</item>
+</itemremove>
+<maxbuildheight>25</maxbuildheight>
+<time result="objectives">30m</time>
+</map>

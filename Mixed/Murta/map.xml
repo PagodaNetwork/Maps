@@ -1,0 +1,191 @@
+<map proto="1.3.6">
+<name>Murta</name>
+<version>2.0.0-Tourney</version>
+<objective>
+Leak lava from the enemy's obsidian core and destroy their two gold block monuments.
+</objective>
+<authors>
+    <author>lord_creeper01</author>
+</authors>
+<contributors>
+    <contributor contribution="Building help">matic0basle</contributor>
+    <contributor contribution="Feedback">iLifting</contributor>
+</contributors>
+<timelock>on</timelock>
+<teams>
+    <team color="green" max="32">Lime Team</team>
+    <team color="gold" max="32">Orange Team</team>
+</teams>
+<regions>
+    <rectangle name="lime-spawn" min="-31,102" max="-40,113"/>
+    <rectangle name="orange-spawn" min="-31,-118" max="-40,-107"/>
+    <union name="resistance">
+        <cuboid max="-38,79,-113" min="-33,80,-108"/>
+        <cuboid max="-38,79,103" min="-33,80,108"/>
+    </union>
+    <apply kit="potion">
+        <region name="resistance"/>
+    </apply>
+    <apply block="deny-dispensers">
+        <rectangle name="playable" max="oo,oo" min="-oo,-oo"/>
+    </apply>
+    <apply block="deny-all" message="You may not break the portals">
+        <union name="protection">
+            <cuboid max="-2,30,-77" min="-3,32,-79"/>
+            <cuboid max="-69,30,-77" min="-68,32,-79"/>
+            <cuboid max="4,46,-62" min="-1,49,-61"/>
+            <cuboid max="-70,46,-62" min="-75,49,-61"/>
+            <cuboid max="-2,30,74" min="-3,32,72"/>
+            <cuboid max="-68,30,72" min="-69,32,74"/>
+            <cuboid max="-75,46,57" min="-70,49,56"/>
+            <cuboid max="-1,46,57" min="4,49,56"/>
+        </union>
+    </apply>
+    <apply block="deny-all" message="You may not block spawns">
+        <region name="lime-spawn"/>
+        <region name="orange-spawn"/>
+    </apply>
+    <apply block="no-void" message="You may not build in the void">
+        <negative>
+            <rectangle name="frontlines" max="-81,-41" min="11,36"/>
+            <region name="protection"/>
+        </negative>
+    </apply>
+</regions>
+<filters>
+    <filter name="no-void">
+        <not>
+            <void/>
+        </not>
+    </filter>
+    <filter name="only-orange" parents="deny-all">
+        <allow>
+            <team>orange</team>
+        </allow>
+    </filter>
+    <filter name="only-lime" parents="deny-all">
+        <allow>
+            <team>lime</team>
+        </allow>
+    </filter>
+    <filter name="deny-dispensers">
+        <not>
+            <block>dispenser</block>
+        </not>
+    </filter>
+</filters>
+<kits>
+    <kit name="spawn">
+        <item slot="0">diamond sword</item>
+        <item slot="1" enchantment="arrow infinite:1">bow</item>
+        <item slot="28" amount="1">arrow</item>
+        <item slot="2" enchantment="durability:3;dig speed:2">iron pickaxe</item>
+        <item slot="3" amount="64">smooth brick</item>
+        <item slot="4" amount="64">smooth brick</item>
+        <item slot="5" amount="64">glass</item>
+        <item slot="6" amount="64" damage="1">wood</item>
+        <item slot="7" amount="32">ladder</item>
+        <item slot="8" amount="32">golden carrot</item>
+    </kit>
+    <kit name="restrict-obs">
+        <potion duration="oo" ambient="true">night vision</potion>
+        <item slot="1">air</item>
+        <item slot="2">air</item>
+        <item slot="3">air</item>
+        <item slot="4">air</item>
+    </kit>
+    <kit name="potion">
+        <potion duration="3" amplifier="5" ambient="true">damage resistance</potion>
+    </kit>
+</kits>
+<spawns safe="true">
+    <spawn team="lime" kit="spawn">
+        <regions yaw="180"><point>-35.5,82,110.5</point></regions>
+    </spawn>
+    <spawn team="orange" kit="spawn">
+        <regions yaw="0"><point>-35.5,82,-115</point></regions>
+    </spawn>
+    <default kit="restrict-obs">
+        <regions yaw="90"><point>55.5,54,-1.5</point></regions>
+    </default>
+</spawns>
+<modes>
+    <mode after="15m" material="gold block" name="GOLD CORE MODE"/>
+    <mode after="30m" material="glass" name="GLASS CORE MODE"/>
+</modes>
+<cores material="obsidian" leak="4" mode-changes="true">
+    <core team="lime">
+        <region><cuboid min="-31,44,31" max="-40,34,40"/></region>
+    </core>
+    <core team="orange">
+        <region><cuboid min="-31,44,-45" max="-40,34,-36"/></region>
+    </core>
+</cores>
+<destroyables owner="orange" materials="gold block">
+    <destroyable name="West Monument">
+        <region><cuboid min="-70,30,-56" max="-75,38,-61"/></region>
+    </destroyable>
+    <destroyable name="East Monument">
+        <region><cuboid min="-1,30,-56" max="4,38,-61"/></region>
+    </destroyable>
+</destroyables>
+<destroyables owner="lime" materials="gold block">
+    <destroyable name="West Monument">
+        <region><cuboid min="-75,38,51" max="-70,30,56"/></region>
+    </destroyable>
+    <destroyable name="East Monument">
+        <region><cuboid min="-1,30,51" max="4,38,56"/></region>
+    </destroyable>
+</destroyables>
+<portals>
+<!--
+ Orange side 
+-->
+    <portal x="@1.5" y="@46" z="@-70.5">
+        <region><cuboid max="-2,30,-77" min="-3,32,-79"/></region>
+    </portal>
+    <portal x="@-72.5" y="@46" z="@-70.5">
+        <region><cuboid max="-69,30,-77" min="-68,32,-79"/></region>
+    </portal>
+    <portal x="@4" y="@30" z="@-78">
+        <region><cuboid max="4,46,-62" min="-1,49,-61"/></region>
+    </portal>
+    <portal x="@-75" y="@30" z="@-78">
+        <region><cuboid max="-70,46,-62" min="-75,49,-61"/></region>
+    </portal>
+<!--
+ Lime side 
+-->
+    <portal x="@1.5" y="@46" z="@65.5">
+        <region><cuboid max="-2,30,74" min="-3,32,72"/></region>
+    </portal>
+    <portal x="@-72.5" y="@46" z="@65.5">
+        <region><cuboid max="-68,30,72" min="-69,32,74"/></region>
+    </portal>
+    <portal x="@-75" y="@30" z="@73">
+        <region><cuboid max="-75,46,57" min="-70,49,56"/></region>
+    </portal>
+    <portal x="@4" y="@30" z="@73">
+        <region><cuboid max="-1,46,57" min="4,49,56"/></region>
+    </portal>
+</portals>
+<toolrepair>
+    <tool>diamond sword</tool>
+    <tool>bow</tool>
+    <tool>iron pickaxe</tool>
+    <tool>arrow</tool>
+</toolrepair>
+<itemremove>
+    <item>obsidian</item>
+    <item>gold block</item>
+    <item>smooth brick</item>
+    <item>glass</item>
+    <item>ladder</item>
+    <item>ender stone</item>
+    <item>arrow</item>
+    <item>golden carrot</item>
+    <item>wood</item>
+    <item>dispenser</item>
+</itemremove>
+<maxbuildheight>65</maxbuildheight>
+</map>

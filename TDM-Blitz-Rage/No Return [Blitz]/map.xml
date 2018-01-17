@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<map proto="1.3.0">
+<name>No Return</name>
+<version>2.1.0</version>
+<objective>Eliminate the other team.</objective>
+<authors>
+    <author>AntonyMo</author>
+</authors>
+<contributors>
+	<contributor contribution="Feedback and Minor Aesthetics">Stealth5061</contributor>
+</contributors>
+<rules>
+   <rule>You may not access areas where the lava cannot flow (apart from the center).</rule>
+   <rule>Do not prevent the lava from flowing.</rule>
+</rules>
+<teams>
+    <team color="dark purple" max="28">Purple Team</team>
+    <team color="blue" max="28">Blue Team</team>
+</teams>
+<blitz>
+    <time>5m</time> 
+    <lives>1</lives> 
+</blitz>
+<timelock>on</timelock>
+<spawns>
+    <spawn team="Purple" kit="Purple" yaw="180"><cuboid min="18,18,55" max="-17,18,53"/></spawn>
+	<spawn team="Blue" kit="Blue" yaw="0"><cuboid min="18,18,-53" max="-17,18,-55"/></spawn>
+	<default yaw="270"><cylinder base="51,35,0" radius="2" height="0"/></default>
+</spawns>
+<kits>
+    <kit name="spawn">
+        <item slot="0" enchantment="arrow damage:1;arrow infinite:1;damage all:2;knockback:2">bow</item>
+        <item slot="27">arrow</item>
+    </kit>
+    <kit name="Blue" parents="spawn">
+        <helmet color="0066cc">leather helmet</helmet>
+        <chestplate color="0066cc">leather chestplate</chestplate>
+        <leggings color="0066cc">leather leggings</leggings>
+        <boots color="0066cc">leather boots</boots>
+    </kit>
+    <kit name="Purple" parents="spawn">
+        <helmet color="cc00ff">leather helmet</helmet>
+        <chestplate color="cc00ff">leather chestplate</chestplate>
+        <leggings color="cc00ff">leather leggings</leggings>
+        <boots color="cc00ff">leather boots</boots>
+    </kit>
+</kits>
+<toolrepair>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>arrow</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+</itemremove>
+<!-- Deny player interaction, allow lava flow -->
+<filters>
+	<filter name="allow-lava" parents="deny-all">
+		<allow>
+			<block>lava</block>
+		</allow>
+	</filter>
+</filters>
+<regions>
+<apply use="allow-lava">
+    <negative>
+		<rectangle min="0,0" max="0,0"/>
+	</negative>
+</apply>
+</regions>
+</map>

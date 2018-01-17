@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Push</name>
+<version>1.0.0</version>
+<objective>Destroy the enemy's Core and Monument.</objective>
+<time result="objectives">30m</time>
+<authors>
+    <author uuid="e7ff5c65-9fef-4b65-96c3-e33871507c2d"/> <!-- Sr_Juan -->
+    <author uuid="2fe2d3ee-419f-4ac2-9f31-ff47164b789e"/> <!-- 1uis -->
+</authors>
+<contributors>
+    <contributor uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7" contribution="XML"/> <!-- Prodigy4532 | Banned -->
+    <contributor uuid="4658c198-920d-4f20-b432-7fb1dc372cee" contribution="Ideas"/> <!-- Flecka -->
+</contributors>
+<teams>
+   <team id="red" color="dark red" max="5" max-overfill="5">Red Team</team>
+   <team id="blue" color="blue" max="5" max-overfill="5">Blue Team</team>
+</teams>
+<kits>
+    <kit id="spawn" force="true">
+        <item slot="0">iron sword</item>
+        <item slot="1">bow</item>
+        <item slot="2">diamond pickaxe</item>
+        <item slot="3">iron axe</item>
+        <item slot="8" amount="32">apple</item>
+        <item slot="4" amount="32">glass</item>
+        <item slot="5" amount="64">wood</item>
+        <item slot="6" amount="64">wood</item>
+        <item slot="7" amount="64">stone</item>
+        <item slot="28" amount="32">arrow</item>
+    </kit>
+</kits>
+<itemremove>
+    <item>coal block</item>
+    <item>obsidian</item>
+    <item>bow</item>
+    <item>iron sword</item>
+    <item>diamond pickaxe</item>
+    <item>iron axe</item>
+    <item>glass</item>
+</itemremove>
+<spawns>
+    <spawn team="red" kit="spawn">
+        <regions yaw="-135">
+            <cuboid min="-62,37,20" max="-62,37,20"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="spawn">
+        <regions yaw="45">
+            <cuboid min="73,37,-27" max="73,37,-27"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-180">
+            <cuboid min="5,31,44" max="5,31,44"/>
+        </regions>
+    </default>
+</spawns>
+<destroyables name="Coal Monument" materials="coal block" completion="100%">
+    <destroyable owner="blue">
+       <region><cuboid min="21,20,13" max="25,10,9"/></region>
+    </destroyable>
+    <destroyable owner="red">
+       <region><cuboid min="-10,20,-20" max="-14,10,-16"/></region>
+    </destroyable>
+</destroyables>
+<cores material="obsidian" leak="2" mode-changes="true">
+    <core team="red">
+        <cuboid min="-22,17,14" max="-28,10,8"/>    
+    </core>
+    <core team="blue">
+        <cuboid min="39,10,-15" max="33,17,-21"/>
+    </core>
+</cores>
+<modes>
+    <mode after="10m" material="gold block" name="GOLD CORE MODE"/>
+    <mode after="15m" material="packed ice" name="PACKED ICE CORE MODE"/>
+</modes>
+<timelock>on</timelock>
+<maxbuildheight>35</maxbuildheight>
+<regions>
+    <!-- spawn deny blocks -->
+    <apply block="deny-all" message="You may not break or place blocks in the spawn!">
+        <cuboid name="red-storage-room" min="-44,1,5" max="-48,35,1"/>
+        <cuboid name="blue-storage-room" min="54,1,-13" max="58,35,-9"/>
+    </apply>
+
+    <!-- spawn protection -->
+    <apply enter="only-blue" message="You may not enter the enemy team's spawn!">
+        <cuboid name="blue-storage-room" min="54,1,-13" max="58,35,-9"/>
+    </apply>
+    <apply enter="only-red" message="You may not enter the enemy team's spawn!">
+        <cuboid name="red-spawn-room" min="-44,1,5" max="-48,35,1"/>    
+    </apply>
+    <!-- void -->
+    <apply block="no-void" message="You may not build in the void">
+        <negative>
+            <rectangle name="blue" min="18,-25" max="60,17"/>
+            <rectangle name="red" min="-8,18" max="-49,-24"/>
+            <rectangle name="center" min="18,-25" max="-8,17"/>
+        </negative>
+    </apply>
+    <apply block="deny-all" message="You may not place blocks in this zone!">
+        <rectangle name="iron-blue" min="54,-14" max="59,-25"/>
+        <rectangle name="iron-red" min="-49,18" max="-43,7"/>
+    </apply>
+</regions>
+<filters>
+    <filter name="only-blue">
+        <team>blue</team>
+    </filter>
+    <filter name="only-red">
+        <team>red</team>
+    </filter>
+    <filter name="only-blue-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>blue</team>
+            </all>
+        </not>
+    </filter>
+    <filter name="only-red-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>red</team>
+            </all>
+        </not>
+    </filter>
+    <filter name="no-void">
+        <deny>
+            <void/>
+        </deny>
+    </filter>
+</filters>
+</map>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<map proto="1.0.0">
+<name>Balloon Archipelago</name>
+<version>1.0</version>
+<objective>Break the obsidian from the enemy team's monument.</objective>
+<authors>
+    <author>McSpider</author>
+</authors>
+<contributors>
+    <contributor contribution="Map Feedback and XML Coding">Plastix</contributor>
+</contributors>
+<teams>
+    <team color="dark red" max="8">Red Team</team>
+    <team color="blue" max="8">Blue Team</team>
+</teams>
+<maxbuildheight>60</maxbuildheight>
+<spawns>
+    <spawns kit="spawn">
+        <spawn team="red" yaw="-90"><cuboid min="-58,22,-59" max="-61,22,-56"/></spawn>
+        <spawn team="blue" yaw="90"><cuboid min="59,22,58" max="62,22,61"/></spawn>
+    </spawns>
+    <default yaw="0"><cuboid min="-1,77,-1" max="2,77,2"/></default>
+</spawns>
+<filters>
+    <filter name="only-blue" parents="deny-players deny-world">
+        <allow><team>blue</team></allow>
+    </filter>
+    <filter name="only-red" parents="deny-players deny-world">
+        <allow><team>red</team></allow>
+    </filter>
+</filters>
+<regions>
+    <!-- Red Team Base -->
+    <apply enter="only-red" message="You may not enter the enemy team's base!">
+        <circle center="-53,-58" radius="10"/>
+    </apply>
+    <apply block="deny-all" message="You may not modify the base!">
+        <circle center="-53,-58" radius="11"/>
+    </apply>
+    <!-- Blue Team Base -->
+    <apply enter="only-blue" message="You may not enter the enemy team's base!">
+        <circle center="53,58" radius="10"/>
+    </apply>
+     <apply block="deny-all" message="You may not modify the base!">
+        <circle center="53,58" radius="11"/>
+    </apply>
+    <!--- Main Playing Area -->
+    <apply block="deny-all" message="You may not build outside the playing area!">
+        <negative name="playable-inverse">
+        <circle center="0,0" radius="150"/>
+        </negative>
+    </apply>
+</regions>
+<destroyables name="Monument" materials="obsidian">
+    <destroyable owner="blue">
+        <cuboid min="18,21,124" max="17,19,123"/>
+    </destroyable>
+    <destroyable owner="red">
+        <cuboid min="-16,21,-122" max="-17,19,-123"/>
+    </destroyable>
+</destroyables>
+<kits>
+    <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1" enchantment="arrow infinite:1">bow</item>
+        <item slot="28">arrow</item>
+        <item slot="2">diamond pickaxe</item>
+        <item slot="3">iron axe</item>
+        <item slot="4" amount="64">log</item>
+        <item slot="5" amount="32">glass</item>
+        <item slot="7" amount="7">gold nugget</item>
+        <item slot="8" amount="32">bread</item>
+        <chestplate>iron chestplate</chestplate>
+        <boots enchantment="protection fall:1">>iron boots</boots>
+        <potion duration="10" amplifier="1">heal</potion>
+    </kit>
+</kits>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>diamond pickaxe</tool>
+    <tool>iron axe</tool>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>arrow</item>
+    <item>iron chestplate</item>
+    <item>iron boots</item>
+    <item>glass</item>
+    <item>bread</item>
+</itemremove>
+<tnt>
+    <instantignite>on</instantignite>
+</tnt>
+</map>

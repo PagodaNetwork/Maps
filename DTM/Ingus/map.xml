@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<map proto="1.3.6">
+ <name>Ingus</name>
+ <version>1.0.0</version>
+  <objective>
+   Destroy the enemy team's monument
+  </objective>
+  <authors>
+   <author>edde_valle_123</author>
+  </authors>
+  <contributors>
+   <contributor contribution="XML">Diamyx</contributor>
+   <contributor contribution="Feedback">rockymine</contributor>
+  </contributors>
+   <teams>
+     <team id="lime" color="green" max="10">Lime</team>
+     <team id="purple" color="dark purple" max="10">Purple</team>
+   </teams>
+   <spawns>
+     <default>
+       <regions yaw="90">
+         <cuboid min="-638,13,-435" max="-641,13,-431"/>
+       </regions>
+     </default>
+   <spawn team="lime" kit="lime" safe="true">
+     <regions yaw="180">
+       <cuboid min="-645,16,-404" max="-645,16,-406"/>
+     </regions>
+   </spawn>
+   <spawn team="purple" kit="purple" safe="true">
+     <regions yaw="0">
+       <cuboid min="-639,16,-460" max="-639,16,-459"/>
+     </regions>
+   </spawn>
+   </spawns>
+  <kits>
+   <kit name="spawn">
+     <item slot="0" damage="-3000">stone sword</item>
+     <item slot="1" damage="-3000" enchantment="arrow infinite:1">bow</item>
+     <item slot="2" damage="-3000">diamond pickaxe</item>
+     <item slot="3" amount="32">sandstone</item>
+     <item slot="8" amount="64">golden carrot</item>
+     <item slot="28">arrow</item>
+   </kit>
+   <kit name="lime" parents="spawn">
+     <helmet locked="true" damage="-3000" color="7FCC19">leather helmet</helmet>
+     <chestplate locked="true" damage="-3000" color="7FCC19">leather chestplate</chestplate>
+     <leggings locked="true" damage="-3000" color="7FCC19">leather leggings</leggings>
+     <boots locked="true" damage="-3000" color="7FCC19">leather boots</boots>
+   </kit>
+   <kit name="purple" parents="spawn">
+     <helmet locked="true" damage="-3000" color="7F3FB2">leather helmet</helmet>
+     <chestplate locked="true" damage="-3000" color="7F3FB2">leather helmet</chestplate>
+     <leggings locked="true" damage="-3000" color="7F3FB2">leather helmet</leggings>
+     <boots locked="true" damage="-3000" color="7F3FB2">leather helmet</boots>
+   </kit>
+  </kits>
+ <filters>
+     <filter name="tnt-damage">
+        <not>
+            <all>
+                <cause>explosion</cause>
+                <block>tnt</block>
+            </all>
+        </not>
+    </filter>
+    <filter name="deny-lime">
+      <not>
+        <team>lime</team>
+      </not>
+    </filter>
+   <filter name="deny-purple">
+      <not>
+        <team>purple</team>
+      </not>
+    </filter>
+ </filters>
+ <regions>
+  <rectangle name="main-area" min="-582,411" max="-703,-454"/>
+   <union name="spawn-tubes">
+     <cuboid name="lime-spawn-tube" min="-649,15,-421" max="-642,19,-403"/>
+     <cuboid name="purple-spawn-tube" min="-636,15,-444" max="-643,19,-462"/>
+   </union>
+   <union name="monuments">
+     <cuboid name="lime-monument" min="-665,12,-416" max="-668,10,-419"/>
+     <cuboid name="purple-monument" min="-620,12,-446" max="-617,10,-449"/>
+   </union>
+   <union name="hills">
+     <rectangle name="lime-hill" min="-601,-411" max="-582,-430"/>
+     <rectangle name="purple-hill" min="-684,-454" max="-703,-435"/>
+   </union>
+   <rectangle name="middle" min="-596,-425" max="-690,-441"/>
+   <union name="water">
+     <rectangle name="lime-water" min="-643,-420" max="-648,-415"/>
+     <rectangle name="purple-water" min="-642,-445" max="-637,-450"/>
+   </union>
+ <apply block="deny-all" message="You may not modify the void area">
+   <region name="middle"/>
+ </apply>
+ <apply block="deny-all" message="You may not modify the void area">
+   <negative>
+     <region name="main-area"/>
+   </negative>
+ </apply>
+ <apply block="deny-all" message="You may not edit the hills">
+   <region name="hills"/>
+ </apply>
+ <apply block="tnt-damage">
+   <region name="hills"/>
+ </apply>
+ <apply block="deny-all" message="You may not edit the spawns">
+   <region name="spawn-tubes"/>
+ </apply>
+ <apply block="deny-all" message="You may not block the water">
+   <region name="water"/>
+ </apply>
+ <apply enter="deny-lime">
+   <region name="purple-spawn-tube"/>
+ </apply>
+ <apply enter="deny-purple">
+   <region name="lime-spawn-tube"/>
+ </apply>
+ </regions>
+ <destroyables owner="lime" completion="100%">
+   <destroyable name="Monument" id="lime-mon" region="lime-monument" materials="gold block"/>
+ </destroyables>
+ <destroyables owner="purple" completion="100%">
+   <destroyable name="Monument" id="purple-mon" region="purple-monument" materials="gold block"/>
+ </destroyables>
+ <maxbuildheight>15</maxbuildheight>
+ <itemremove>
+   <item>stone sword</item>
+   <item>bow</item>
+   <item>diamond pickaxe</item>
+   <item>sandstone</item>
+   <item>golden carrot</item>
+   <item>leather helmet</item>
+   <item>leather chestplate</item>
+   <item>leather leggings</item>
+   <item>leather boots</item>
+   <item>wool</item>
+   <item>smooth brick</item>
+   <item>smooth stairs</item>
+   <item>step</item>
+   <item>chest</item>
+   <item>sandstone stairs</item>
+ </itemremove>
+</map>

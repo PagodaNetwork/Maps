@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<map proto="1.3.3">
+<name>Freymont II</name>
+<version>1.0.0</version>
+<objective>
+    Destroy the enemy teams obsidian monument!
+</objective>
+<authors>
+    <auhtor>Avaleer</auhtor>
+</authors>
+<contributors>
+    <contributor contribution="Spawners">_IQ</contributor>
+    <contributior contribution="XML">orky48</contributior>
+</contributors>
+<teams>
+    <team color="green" max="32">Green Team</team>
+    <team color="yellow" max="32">Yellow Team</team>
+</teams>
+<kits>
+    <kit name="spawn">
+        <item slot="0">iron sword</item>
+        <item slot="1" enchantment="arrow infinte">bow</item>
+        <item slot="28">arrow</item>
+        <item slot="2">iron pickaxe</item>
+        <item slot="3">iron axe</item>
+        <item slot="4" amount="2">golden apple</item>
+        <item slot="5" amount="64" damage="2">log</item>
+        <item slot="8" amount="64">golden carrot</item>
+    </kit>
+    <kit name="yellow-spawn" parents="spawn">
+        <helmet color="E5E533" damage="-3000">leather helmet</helmet>
+        <chestplate color="E5E533" damage="-3000">leather chestplate</chestplate>
+        <leggings color="E5E533" damage="-3000">leather leggings</leggings>
+        <boots color="E5E533" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="green-spawn" parents="spawn">
+        <helmet color="667F33" damage="-3000">leather helmet</helmet>
+        <chestplate color="667F33" damage="-3000">leather chestplate</chestplate>
+        <leggings color="667F33" damage="-3000">leather leggings</leggings>
+        <boots color="667F33" damage="-3000">leather boots</boots>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="yellow" kit="yellow-spawn" angle="1.5,29,-103.5" safe="true">
+        <cuboid min="0,27,-104" max="3,27,-101"/>
+    </spawn>
+    <spawn team="green" kit="green-spawn" angle="1.5,29,105.5" safe="true">
+        <cuboid min="0,27,104" max="3,27,107"/>
+    </spawn>
+    <default yaw="-90">
+        <block>80.5,13,1.5</block>
+    </default>
+</spawns>
+<filters>
+    <filter name="deny-spawers">
+        <not><block>mob spawner</block></not>
+    </filter>
+</filters>
+<regions>
+    <apply block="deny-world">
+        <negative>
+            <rectangle name="play-area" min="-47,-154" max="50,157"/>
+        </negative>
+    </apply>
+    <apply block="deny-spawners" message="You may not break the spawners!">
+        <region name="play-area"/>
+    </apply>
+    <union name="spawns">
+        <circle name="spawn-yellow" center="1.5,-102.5" radius="4"/>
+        <circle name="spawn-green" center="1.5,105.5" radius="4"/>
+    </union>
+    <apply block="deny-world" message="You may not edit the spawns!">
+        <region name="spawns"/>
+    </apply>
+</regions>
+<destoyables name="Monument" materials="obsidian">
+    <destroyable owner="green">
+        <cuboid min="1,3,138" max="2,6,139"/>
+    </destroyable>
+    <destroyable owner="yellow">
+        <cuboid min="1,3,-136" max="2,6,-135"/>
+    </destroyable>
+</destoyables>
+<tiemlock>on</tiemlock>
+<itemremove>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+    <item>golden carrot</item>
+</itemremove>
+<toolrepair>
+    <tool>bow</tool>
+    <tool>iron sword</tool>
+    <tool>iron pickaxe</tool>
+    <tool>iron axe</tool>
+    <tool>arrow</tool>
+</toolrepair>
+<maxbuildheight>25</maxbuildheight>
+</map>

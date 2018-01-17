@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Crossfire</name>
+<version>1.0.0</version>
+<objective>Be the team with the most points after 10 minutes.</objective>
+<authors>
+    <author uuid="606252f7-3dc2-4277-853c-c5df999e22fc"/> <!-- Eteh -->
+    <author uuid="c29bef37-d8e2-42a9-b746-04f2df78f374"/> <!-- Legoche -->
+</authors>
+<contributors>
+    <contributor uuid="9116d3fa-1400-4ada-aecd-2eae1d73e383" contribution="Help"/> <!-- Xuph -->
+</contributors>
+<timelock>on</timelock>
+<teams>
+   <team id="green" color="green" min="1" max="8">Green</team>
+   <team id="yellow" color="yellow" min="1" max="8">Yellow</team>
+</teams>
+<spawns>
+    <spawns team="green" kit="green">
+        <spawn>
+            <regions yaw="0"><block>34.5,84,-45.5</block></regions>
+        </spawn>
+        <spawn>
+            <regions yaw="-180"><block>34.5,84,-17.5</block></regions>
+        </spawn>
+    </spawns>
+    <spawns team="yellow" kit="yellow">
+        <spawn>
+            <regions yaw="180"><block>-37.5,84,-17.5</block></regions>
+        </spawn>
+        <spawn>
+            <regions yaw="0"><block>-37.5,84,-45.5</block></regions>
+        </spawn>
+    </spawns>
+    <default>
+        <regions yaw="0"><cuboid min="-0.5,94,-62" max="-2.5,94,-64.5"/></regions>
+    </default>
+</spawns>
+<score>
+    <limit>100</limit>
+    <time>600</time>
+    <kills>1</kills>
+    <deaths>0</deaths>
+    <box value="2" filter="no-yellow" cooldown="10">
+		<cuboid name="greenscore1" min="-31,72,-30" max="-29,75,-33"/>  
+    </box>
+    <box value="2" filter="no-green" cooldown="10">
+		<cuboid name="yellowscore1" min="27,76,-30" max="25,73,-33"/>             		
+    </box>
+</score>
+<portals>
+    <portal x="@26.5" y="@67" z="@-31.5" yaw="@90">
+		    <cuboid min="-31,72,-30" max="-29,75,-33"/>   
+    </portal>
+    <portal x="@-29.5" y="@67" z="@-31.5" yaw="@-90">
+		    <cuboid min="27,76,-30" max="25,73,-33"/>     
+    </portal>
+</portals>
+<filters>
+    <filter name="no-green" parents="deny-all">
+        <allow>
+            <team>yellow</team>
+
+        </allow>
+    </filter>
+    <filter name="no-yellow" parents="deny-all">
+        <allow>
+            <team>green</team>
+        </allow>
+    </filter>
+</filters>
+<regions>
+    <apply block="deny-all" message="You are not allowed to build in this map.">
+         <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+    <apply kit="portal" enter="no-yellow" message="You may not enter your own scorebox.">
+		<cuboid min="-31,72,-30" max="-29,75,-33"/>    
+    </apply>
+    <apply kit="portal" enter="no-green" message="You may not enter your own scorebox.">
+        <cuboid min="27,76,-30" max="25,73,-33"/>  	  
+    </apply>
+</regions>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">stone sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="5" amount="16">bread</item>
+        <item slot="8" amount="12">arrow</item>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+        <boots damage="-3000">iron boots</boots>
+        <helmet color="667F33" damage="-3000">iron helmet</helmet>
+    </kit>
+    <kit name="green" parents="spawn">  
+        <chestplate color="667F33" damage="-3000">leather chestplate</chestplate>
+        <leggings color="667F33" damage="-3000">leather leggings</leggings>
+    </kit>
+    <kit name="yellow" parents="spawn">
+        <chestplate color="E5E533" damage="-3000">leather chestplate</chestplate>
+        <leggings color="E5E533" damage="-3000">leather leggings</leggings>
+    </kit>
+    <kit name="kill">
+        <item slot="4" amount="1">golden apple</item>
+    </kit>
+</kits>
+<itemremove>
+    <item>iron helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>iron boots</item>
+    <item>bread</item>
+</itemremove>
+<toolrepair>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<kill-rewards>
+    <kill-reward>
+        <kit id="kill"/>
+    </kill-reward>
+</kill-rewards>
+</map>
