@@ -108,16 +108,16 @@
     </kill-reward>
 </kill-rewards>
 <destroyables>
-	<destroyable id="Left Monument" materials="obsidian" mode-changes="true" owner="red">
+	<destroyable name="Left Monument" materials="obsidian" mode-changes="true" owner="red">
 		<cuboid min="-67,12,245" max="-67,14,245"/>
 	</destroyable>
-	<destroyable id="Right Monument" materials="obsidian" mode-changes="true" owner="red">
+	<destroyable name="Right Monument" materials="obsidian" mode-changes="true" owner="red">
     	<cuboid min="-67,12,177" max="-67,14,177"/>
     </destroyable>
-	<destroyable id="Left Monument" materials="obsidian" mode-changes="true" owner="blue">
+	<destroyable name="Left Monument" materials="obsidian" mode-changes="true" owner="blue">
     	<cuboid min="113,12,177" max="113,14,177"/>
 	</destroyable>
-	<destroyable id="Right Monument" materials="obsidian" mode-changes="true" owner="blue">
+	<destroyable name="Right Monument" materials="obsidian" mode-changes="true" owner="blue">
     	<cuboid min="113,12,245" max="113,14,245"/>
     </destroyable>
 </destroyables>
