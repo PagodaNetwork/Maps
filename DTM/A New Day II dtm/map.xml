@@ -111,20 +111,38 @@
 	<destroyable name="Left" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
 		<region>
             <union id="red-left">
+                <block>-67,12,177</block>
+                <block>-67,13,177</block>
+                <block>-67,14,177</block>
+            </union>
+        </region>
+    </destroyable>
+    <destroyable name="Right" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
+        <region>
+            <union id="red-right">
                 <block>-67,12,245</block>
                 <block>-67,13,245</block>
                 <block>-67,14,245</block>
             </union>
         </region>
     </destroyable>
-	<destroyable name="Right" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
-    	<region><cuboid min="-67.5,12,177.5" max="-67.5,15,177.5"/></region>
+    <destroyable name="Left" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
+        <region>
+            <union id="blue-left">
+                <block>113,12,245</block>
+                <block>113,13,245</block>
+                <block>113,14,245</block>
+            </union>
+        </region>
     </destroyable>
-	<destroyable name="Left" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
-    	<region><cuboid min="113.5,12,177.5" max="113.5,15,177.5"/></region>
-	</destroyable>
-	<destroyable name="Right" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
-    	<region><cuboid min="113.5,12,245.5" max="113.5,15,245.5"/></region>
+    <destroyable name="Right" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
+        <region>
+            <union id="blue-right">
+                <block>113,12,177</block>
+                <block>113,13,177</block>
+                <block>113,14,177</block>
+            </union>
+        </region>
     </destroyable>
 </destroyables>
 <modes>
