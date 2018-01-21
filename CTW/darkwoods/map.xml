@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<map proto="1.4.3">
+<name>Darkwoods</name>
+<version>1.1</version>
+<objective>Capture your wools and bring them back to your base</objective>
+<authors>
+	<author uuid="50a34639-abb3-4cf1-b182-204756c49f49" /> <!-- Sam -->
+</authors>
+<teams>
+	<team color="green" id="green" max="20" min="1">Green Team</team>
+    <team color="blue" id="blue" max="20" min="1">Blue Team</team>
+</teams>
+<kits>
+    <kit id="default">
+        <item slot="0" material="iron sword"/>
+        <item slot="1" enchantment="arrow infinite:1" material="bow"/>
+        <item slot="10" material="arrow"/>
+        <item slot="2" material="iron pickaxe" enchantment="dig speed:2"/>
+        <item slot="3" material="iron axe" enchantment="dig speed:1"/>
+        <item slot="4" amount="64" material="cooked beef"/>
+        <item slot="5" amount="1" material="golden apple"/>
+        <item slot="6" amount="24" material="glass"/>
+        <item slot="7" material="wood"/>
+        <chestplate material="iron chestplate"/>
+    </kit>
+    <kit id="kit-green" parents="default">
+        <helmet color="00AA00" material="leather helmet"/>
+    </kit>
+    <kit id="kit-blue" parents="default">
+        <helmet color="5555FF" material="leather helmet"/>
+    </kit>
+</kits>
+<spawns>
+	<default>
+		<region yaw="180">
+			<point>-20.5,79.06,31.5</point>
+		</region>
+	</default>
+    <!--    Green & Blue Team Spawns    -->
+    <spawn kit="kit-green" team="green" >
+    	<region yaw="-90">
+    		<point>-124.5,70,-27.5</point>
+    	</region>
+    </spawn>
+    <spawn kit="kit-blue" team="blue">
+    	<region yaw="90">
+    		<point>83.5,70,-27.5</point>
+    	</regions>
+    </spawn>
+</spawns>
+<filters>
+    <team id="only-red">green</team>
+    <team id="only-blue">blue</team>
+    <not id="no-void">
+        <void/>
+    </not>
+    <all id="red-web">
+        <team>green</team>
+        <material>web</material>
+    </all>
+    <all id="blue-web">
+        <team>blue</team>
+        <material>web</material>
+    </all>
+</filters>
+<regions>
+	<negative id="void">
+		<union id="spawns">
+			<cuboid id="gren-spawn" min="-112,758,-16" max="-128,49,-40"/>
+			<cuboid id="blue-spawn" min="70,75,-40" max="96,49,-16"/>
+		</union>
+		<union id="midline">
+			<rectangle min="-49,-40" max="7,58"/>
+			<rectangle min="7,-16" max="-49,2"/>
+		</union>
+		<union id="woolrooms">
+			<union id="green-capture-wool">
+				<rectangle min="82,-58" max="70,-69"/>
+				<rectangle min="82,2" max="70,13"/>
+			</union>
+			<union id="blue-capture-wool">
+				<rectangle min="-124,-58" max="-112,-69"/>
+				<rectangle min="-112,13" max="-124,2"/>
+			</union>
+		</union>
+		<union id="wool-placements">
+			<block location="86,61,-26" id="pink-wool"/>
+			<block location="86,61,-30" id="red-wool"/>
+			<block location="-128,61,-30" id="yellow-wool"/>
+			<block location="-128,61,-26" id="purple-wool"/>
+		</union>
+	</negative>
+    <apply block="no-void" message="You may not edit the void area!" region="void"/>
+    <apply enter="only-red" message="You may not enter the enemy spawn!" region="green-spawn"/>
+    <apply enter="only-blue" message="You may not enter the enemy spawn!" region="blue-spawn"/>
+    <apply block="red-web" message="You may only break webs in the woolroom!" region="green-capture-wool"/>
+    <apply enter="only-blue" message="You may not enter your own woolroom!" region="blue-capture-wool"/>
+    <apply block="blue-web" message="You may only break webs in the woolroom!" region="blue-capture-wool"/>
+    <apply enter="only-red" message="You may not enter your own woolroom!" region="green-capture-wool"/>
+</regions>
+<itemremove>
+	<item>leather helmet</item>
+	<item>iron chestplate</item>
+	<item>cooked beef</item>
+	<item>golden apple</item>
+	<item>glass</item>
+	<item>wood</item>
+	<item>arrow</item>
+	<item>string</item>
+</itemremove>
+<toolrepair>
+	<tool>ironsword</tool>
+	<tool>bow</tool>
+	<tool>iron pickaxe</tool>
+</toolrepair>
+<gamerules>
+	<doDaylightCycle>false</doDaylightCycle>
+</gamerules>
+</map>
