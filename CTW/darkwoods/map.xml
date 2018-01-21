@@ -69,7 +69,7 @@
 <regions>
 	<negative id="void">
         <union id="playable">
-            <rectangle min="-49,-40" max="7,58"/>
+            <rectangle min="-49,-40" max="7,-58"/>
             <rectangle min="7,-16" max="-49,2"/>
         </union>
 		<union id="spawns">
