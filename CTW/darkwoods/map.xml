@@ -102,10 +102,10 @@
     <item amount="1" material="golden apple"/>
 </kill-reward>
 <wools craftable="false">
-    <wool team="blue" color="red" location="-118,55,8" monument="red-wool-wool"/>
-    <wool team="blue" color="pink" location="-118,55,-64" monument="pink-wool-wool"/>
-    <wool team="lime" color="purple" location="76,55,8" monument="purple-wool"/>
-    <wool team="lime" color="yellow" location="76,55,-64" monument="yellow-wool"/>
+    <wool team="blue" color="red" location="-118,55,8" monument="red-wool"/>
+    <wool team="blue" color="pink" location="-118,55,-64" monument="pink-wool"/>
+    <wool team="green" color="purple" location="76,55,8" monument="purple-wool"/>
+    <wool team="green" color="yellow" location="76,55,-64" monument="yellow-wool"/>
 </wools>
 <itemremove>
 	<item>leather helmet</item>
