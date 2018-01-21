@@ -20,7 +20,7 @@
         <item slot="4" amount="64" material="cooked beef"/>
         <item slot="5" amount="1" material="golden apple"/>
         <item slot="6" amount="24" material="glass"/>
-        <item slot="7" material="wood"/>
+        <item slot="7" amount="48" material="wood"/>
         <chestplate material="iron chestplate"/>
     </kit>
     <kit id="kit-green" parents="default">
@@ -98,6 +98,15 @@
     <apply block="blue-web" message="You may only break webs in the woolroom!" region="blue-capture-wool"/>
     <apply enter="only-red" message="You may not enter your own woolroom!" region="green-capture-wool"/>
 </regions>
+<kill-reward>
+    <item amount="1" material="golden apple"/>
+</kill-reward>
+<wools craftable="false">
+    <wool team="blue" color="red" location="-118,55,8" monument="red-wool-wool"/>
+    <wool team="blue" color="pink" location="-118,55,-64" monument="pink-wool-wool"/>
+    <wool team="lime" color="purple" location="76,55,8" monument="purple-wool"/>
+    <wool team="lime" color="yellow" location="76,55,-64" monument="yellow-wool"/>
+</wools>
 <itemremove>
 	<item>leather helmet</item>
 	<item>iron chestplate</item>
