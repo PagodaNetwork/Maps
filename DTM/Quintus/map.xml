@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Quintus</name>
+	<version>1.1.0</version>
+	<objective>Destroy all three of the enemy's monuments to win!</objective>
+	<authors>
+		<author uuid="44df6b20-168f-4389-b7ac-434518207c2f"/>
+		<!-- ParaPenguin -->
+	</authors>
+	<teams>
+		<team id="purple" color="dark purple" max="20">Purple Team</team>
+		<team id="cyan" color="dark aqua" max="20">Cyan Team</team>
+	</teams>
+	<spawns>
+      <spawn team="purple" kit="pkit">
+        <regions yaw="180">
+            <point>40.5, 34, -776.5</point>
+        </regions>
+      </spawn>
+      <spawn team="cyan" kit="ckit">
+        <regions yaw="0">
+            <point>40.5, 34, -902.5</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="-90">
+            <point>-30.5, 90, -839.5</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">iron sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28" amount="48">arrow</item>
+			<item slot="2" enchantment="dig speed">diamond pickaxe</item>
+			<item slot="3" amount="2">golden apple</item>
+			<item slot="4" amount="64">glass</item>
+			<item slot="5" amount="32">log</item>
+			<item slot="8" amount="16">cooked fish</item>
+		</kit>
+		<kit id="pkit" parents="both">
+			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
+			<chestplate damage="-3000" material="chainmail chestplate"/>
+			<leggings damage="-3000" material="gold leggings"/>
+			<boots color="AA00AA" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="ckit" parents="both">
+			<helmet color="00AAAA" damage="-3000">leather helmet</helmet>
+			<chestplate color="00AAAA" damage="-3000">leather chestplate</helmet>
+			<leggings color="00AAAA" damage="-3000">leather leggings</leggings>
+			<boots color="00AAAA" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="cyan" completion="100%">
+		<destroyable name="Front-Left" region="cyan-front-left" materials="obsidian"/>
+        <destroyable name="Front-Right" region="cyan-front-right" materials="obsidian"/>
+		<destroyable name="Back-Middle" region="cyan-back-middle" materials="obsidian"/>
+        <destroyable name="Back-Left" region="cyan-back-left" materials="obsidian"/>
+		<destroyable name="Back-Right" region="cyan-back-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="purple" completion="100%">
+		<destroyable name="Front-Left" region="purple-front-left" materials="obsidian"/>
+        <destroyable name="Front-Right" region="purple-front-right" materials="obsidian"/>
+		<destroyable name="Back-Middle" region="purple-back-middle" materials="obsidian"/>
+        <destroyable name="Back-Left" region="purple-back-left" materials="obsidian"/>
+		<destroyable name="Back-Right" region="purple-back-right" materials="obsidian"/>
+    </destroyables>
+	<regions>
+		<cylinder id="cyan-spawn" base="40, 32, -903" radius="9" height="6"/>
+		<cylinder id="purple-spawn" base="40, 32, -777" radius="9" height="6"/>
+		<cuboid id="killfarm-cyan" max="49, 32, -876" min="31, 35, -882"/>
+		<cuboid id="killfarm-purple" max="31, 32, -804" min="49, 35, -798"/>
+		<cuboid id="pathway-cyan" max="39, 32, -895" min="41, 35, -867"/>
+		<cuboid id="pathway-purple" max="39, 35, -813" min="41, 32, -786"/>
+
+		<union id="monuments">
+            <block id="cyan-front-left">7, 37, -903</block>
+			<block id="cyan-back-left">7, 37, -936</block>
+			<block id="cyan-back-middle">40, 37, -936</block>
+			<block id="cyan-front-right">73, 37, -903</block>
+            <block id="cyan-back-right">73, 37, -936</block>
+			<block id="purple-front-left">73, 37, -777</block>
+			<block id="purple-back-left">73, 37, -744</block>
+			<block id="purple-back-middle">40, 37, -744</block>
+            <block id="purple-front-right">7, 37, -777</block>
+			<block id="purple-back-right">7, 37, -744</block>
+        </union>
+
+        <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+        <apply block="never" region="purple-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="killfarm-cyan" message="You may not modify blocks here!"/>
+		<apply block="never" region="killfarm-purple" message="You may not modify blocks here!"/>
+		<apply block="never" region="pathway-cyan" message="You may not modify blocks here!"/>
+		<apply block="never" region="pathway-purple" message="You may not modify blocks here!"/>
+
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>glass</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+		<item>cooked fish</item>
+		<item>golden apple</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>iron sword</tool>
+		<tool>diamond pickaxe</tool>
+	</toolrepair>
+</map>
