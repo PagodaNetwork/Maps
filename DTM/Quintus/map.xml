@@ -41,13 +41,13 @@
 		</kit>
 		<kit id="pkit" parents="both">
 			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
-			<chestplate damage="-3000" material="chainmail chestplate"/>
-			<leggings damage="-3000" material="gold leggings"/>
+			<chestplate color="AA00AA" damage="-3000">leather helmet</chestplate>
+			<leggings color="00AAAA" damage="-3000">leather leggings</leggings>
 			<boots color="AA00AA" damage="-3000">leather boots</boots>
 		</kit>
 		<kit id="ckit" parents="both">
 			<helmet color="00AAAA" damage="-3000">leather helmet</helmet>
-			<chestplate color="00AAAA" damage="-3000">leather chestplate</helmet>
+			<chestplate color="00AAAA" damage="-3000">leather chestplate</chestplate>
 			<leggings color="00AAAA" damage="-3000">leather leggings</leggings>
 			<boots color="00AAAA" damage="-3000">leather boots</boots>
 		</kit>
