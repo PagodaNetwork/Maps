@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<map proto="1.4.3">
+<name>A New Day II: DTM</name>
+<version>1.0</version>
+<objective>Destroy the Monuments!</objective>
+<authors>
+	<author uuid="b5071a63-bba3-491a-909f-02db314f4319" contribution="Built map and Made xml"/> <!-- dcstarwars -->
+</authors>
+<teams>
+	<team id="red" color="dark red" max="15" max-overfill="20">Red Team</team>
+	<team id="blue" color="blue" max="15" max-overfill="20">Blue Team</team>
+</teams>
+<kits>
+    <kit id="default">
+        <item slot="0" material="iron sword"/>
+        <item slot="1" enchantment="arrow infinite:1" material="bow"/>
+        <item slot="28" material="arrow"/>
+        <item slot="2" material="diamond pickaxe"/>
+        <item slot="3" material="iron axe"/>
+        <item slot="4" amount="64" material="cooked beef"/>
+        <item slot="5" amount="1" material="golden apple"/>
+        <item slot="6" amount="32" damage="1" material="log"/>
+        <item slot="8" material="bucket"/>
+        <item slot="12" material="diamond spade"/>
+        <potion duration="5" amplifier="1">heal</potion>
+    </kit>
+    <kit id="kit-red" parents="default">
+        <chestplate color="AA0000" material="leather chestplate"/>
+    </kit>
+    <kit id="kit-blue" parents="default">
+        <chestplate color="5555FF" material="leather chestplate"/>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="red" kit="kit-red">
+    	<region yaw="-90">
+        	<cuboid min="-77,9.5,213" max="-74,9.5,209"/>
+        </region>
+    </spawn>
+    <spawn team="blue" kit="kit-blue">
+    	<region yaw="90">
+        	<cuboid min="120,9.5,209" max="123,9.5,213"/>
+        </region>
+    </spawn>
+    <default>
+    	<region>
+       		<cuboid min="-9,24.5,302" max="-5,22.5,298"/>
+       	</region>
+    </default>
+</spawns>
+<filters>
+    <team id="only-red">red</team>
+    <team id="only-blue">blue</team>
+    <not id="no-void">
+        <void/>
+    </not>
+    <any id="only-iron">
+        <material>iron block</material>
+    </any>
+</filters>
+<regions>
+    <negative id="void">
+        <union id="midline">
+            <rectangle min="-16,242" max="64,225"/>
+            <rectangle min="65,198" max="-16,181"/>
+            <rectangle min="27,224" max="20,198"/>
+        </union>
+        <union id="spawns">
+                <union id="blue-spawn">
+                <cylinder id="blue-spawn-1" base="121.5,0,211.5" radius="10" height="oo"/>
+                <rectangle id="blue-spawn-2" min="113.5,217.5" max="107.5,205.5"/>
+                <rectangle id="blue-spawn-3" min="85.5,216.5" max="71.5,206.5"/>
+                <rectangle id="blue-tree" min="84,225" max="130,197"/>
+            </union>
+            <union id="red-spawn">
+                <cylinder id="red-spawn-1" base="-74.5,0,211.5" radius="10" height="oo"/>
+                <rectangle id="red-spawn-2" min="-60.5,217.5" max="-66.5,205.5"/>
+                <rectangle id="red-spawn-3" min="-38.5,216.5" max="-24.5,206.5"/>
+                <rectangle id="red-tree" min="-39,197" max="-85,224"/>
+            </union>
+        </union>
+    </negative>
+    <apply block="no-void" message="You may not edit the void area!" region="void"/>
+    <apply block="only-iron" message="You may not edit the spawns!" region="spawns"/>
+    <apply enter="only-red" message="You may not enter the enemy spawn!" region="red-spawn"/>
+    <apply enter="only-blue" message="You may not enter the enemy spawn!" region="blue-spawn"/>
+</regions>
+<renewables>
+    <renewable rate="5" grow="false" particles="false" sound="false" avoid-entities="true">
+        <region>
+            <union>
+                <cuboid min="111,0,196" max="82,15,227"/>
+                <cuboid min="-37,0,227" max="-63,15,197"/>
+            </union>
+        </region>
+        <renew-filter>
+                <material>iron block</material>
+        </renew-filter>
+        <replace-filter>
+                <material>air</material>
+        </replace-filter>
+    </renewable>
+</renewables>
+<kill-rewards>
+    <kill-reward>
+        <item amount="1" material="golden apple"/>
+        <item amount="4" material="glass"/>
+    </kill-reward>
+</kill-rewards>
+<destroyables>
+	<destroyable id="Left Monument" materials="obsidian" mode-changes="true" owner="red">
+		<cuboid min="-67,12,245" max="-67,14,245"/>
+	</destroyable>
+	<destroyable id="Right Monument" materials="obsidian" mode-changes="true" owner="red">
+    	<cuboid min="-67,12,177" max="-67,14,177"/>
+    </destroyable>
+	<destroyable id="Left Monument" materials="obsidian" mode-changes="true" owner="blue">
+    	<cuboid min="113,12,177" max="113,14,177"/>
+	</destroyable>
+	<destroyable id="Right Monument" materials="obsidian" mode-changes="true" owner="blue">
+    	<cuboid min="113,12,245" max="113,14,245"/>
+    </destroyable>
+</destroyables>
+<modes>
+    <mode material="beacon" after="120s"/>
+</modes>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+    <tool>diamond pickaxe</tool>
+    <tool>iron axe</tool>
+    <tool>diamond spade</tool>
+</toolrepair>
+<itemremove>
+    <item>bucket</item>
+    <item>cooked beef</item>
+    <item>17</item>
+    <item>5</item>
+    <item>leather chestplate</item>
+    <item>seeds</item>
+    <item>flint</item>
+</itemremove>
+<gamerules>
+    <doFireTick>false</doFireTick>
+</gamerules>
+<maxbuildheight>17</maxbuildheight>
+</map>
