@@ -108,7 +108,7 @@
     </kill-reward>
 </kill-rewards>
 <destroyables>
-	<destroyable name="Left" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
+	<destroyable name="Right" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
 		<region>
             <union id="red-left">
                 <block>-67,12,177</block>
@@ -117,7 +117,7 @@
             </union>
         </region>
     </destroyable>
-    <destroyable name="Right" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
+    <destroyable name="Left" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
         <region>
             <union id="red-right">
                 <block>-67,12,245</block>
@@ -126,7 +126,7 @@
             </union>
         </region>
     </destroyable>
-    <destroyable name="Left" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
+    <destroyable name="Right" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
         <region>
             <union id="blue-left">
                 <block>113,12,245</block>
@@ -135,7 +135,7 @@
             </union>
         </region>
     </destroyable>
-    <destroyable name="Right" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
+    <destroyable name="Left" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
         <region>
             <union id="blue-right">
                 <block>113,12,177</block>
@@ -146,7 +146,8 @@
     </destroyable>
 </destroyables>
 <modes>
-    <mode material="beacon" after="120s"/>
+    <mode material="beacon" after="20m"/>
+    <mode material="coal block" after="60m"/>
 </modes>
 <toolrepair>
     <tool>iron sword</tool>
