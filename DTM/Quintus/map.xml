@@ -92,7 +92,7 @@
 			<block id="purple-back-right">7, 37, -744</block>
         </union>
 
-        <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+        <apply block="never" region="cyan-spawn" message="You may not modify blocks here!"/>
         <apply block="never" region="purple-spawn" message="You may not modify blocks here!"/>
 		<apply block="never" region="killfarm-cyan" message="You may not modify blocks here!"/>
 		<apply block="never" region="killfarm-purple" message="You may not modify blocks here!"/>
