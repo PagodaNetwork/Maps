@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Ternio</name>
+	<version>1.1.0</version>
+	<objective>Destroy all three of the enemy's monuments to win!</objective>
+	<authors>
+		<author uuid="44df6b20-168f-4389-b7ac-434518207c2f"/>
+		<!-- ParaPenguin -->
+	</authors>
+	<teams>
+		<team id="purple" color="dark purple" max="15">Purple Team</team>
+		<team id="aqua" color="dark aqua" max="15">Cyan Team</team>
+	</teams>
+	<spawns>
+      <spawn team="purple" kit="pkit">
+        <regions yaw="0">
+            <point>4, 25, -820</point>
+        </regions>
+      </spawn>
+      <spawn team="aqua" kit="akit">
+        <regions yaw="180">
+            <point>4, 25, -713</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="-90">
+            <point>-55, 46, -766</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">stone sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28">arrow</item>
+			<item slot="2" enchantment="dig speed">diamond pickaxe</item>
+			<item slot="3" amount="3">golden apple</item>
+			<item slot="4" amount="64">glass</item>
+			<item slot="5" amount="32">log</item>
+			<item slot="8" amount="16">cooked fish</item>
+		</kit>
+		<kit id="pkit" parents="both">
+			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA00AA" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA00AA" damage="-3000">leather leggings</leggings>
+			<boots color="AA00AA" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="akit" parents="both">
+			<helmet color="00AAAA" damage="-3000">leather helmet</helmet>
+			<chestplate color="00AAAA" damage="-3000">leather chestplate</chestplate>
+			<leggings color="00AAAA" damage="-3000">leather leggings</leggings>
+			<boots color="00AAAA" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="aqua" completion="100%">
+		<destroyable name="Left" region="aqua-left" materials="obsidian"/>
+        <destroyable name="Center" region="aqua-center" materials="obsidian"/>
+        <destroyable name="Right" region="aqua-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="purple" completion="100%">
+        <destroyable name="Left" region="purple-left" materials="obsidian"/>
+		<destroyable name="Center" region="purple-center" materials="obsidian"/>
+		<destroyable name="Right" region="purple-right" materials="obsidian"/>
+    </destroyables>
+	<filters>
+		<team id="only-aqua">aqua</team>
+		<team id="only-purple">purple</team>
+	</filters>
+	<regions>
+		<cylinder id="aqua-spawn" base="4, 23, -714" radius="14" height="7"/>
+		<cylinder id="purple-spawn" base="4, 23, -821" radius="14" height="7"/>
+
+		<union id="monuments">
+            <block id="aqua-left">41, 29, -714</block>
+			<block id="aqua-center">4, 29, -677</block>
+            <block id="aqua-right">-33, 29, -714</block>
+			<block id="purple-left">-33, 29, -821</block>
+			<block id="purple-center">4, 29, -858</block>
+            <block id="purple-right">41, 29, -821</block>
+        </union>
+
+        <apply block="never" enter="only-aqua" region="aqua-spawn" message="You may not place blocks here!"/>
+        <apply block="never" enter="only-purple" region="purple-spawn" message="You may not place blocks here!"/>
+
+        <apply enter="only-aqua" region="aqua-spawn"/>
+        <apply enter="only-purple" region="purple-spawn"/>
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>glass</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+		<item>cooked fish</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>stone sword</tool>
+		<tool>diamond pickaxe</tool>
+	</toolrepair>
+</map>

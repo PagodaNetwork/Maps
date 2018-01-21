@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Halcyon</name>
+	<version>1.0.4</version>
+	<objective>Destroy both of the enemy's monuments to win!</objective>
+	<authors>
+		<author uuid="8242e55e-cc6a-458a-b272-a2b34918045f"/>
+		<!-- keenan -->
+	</authors>
+	<teams>
+		<team id="purple" color="dark purple" max="18">Purple Team</team>
+		<team id="red" color="dark red" max="18">Red Team</team>
+	</teams>
+	<spawns>
+      <spawn team="purple" kit="pkit">
+        <regions yaw="0">
+            <point>14,75,-871</point>
+        </regions>
+      </spawn>
+      <spawn team="red" kit="rkit">
+        <regions yaw="180">
+            <point>14,75,-761</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="-90">
+            <point>-34,85,-816</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">stone sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28">arrow</item>
+			<item slot="2" enchantment="dig speed">diamond pickaxe</item>
+			<item slot="3">stone axe</item>
+			<item slot="4" amount="64">apple</item>
+			<item slot="5" amount="1">golden apple</item>
+			<item slot="6" amount="32">log</item>
+			<item slot="8" amount="64">glass</item>
+		</kit>
+		<kit id="pkit" parents="both">
+			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA00AA" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA00AA" damage="-3000">leather leggings</leggings>
+			<boots color="AA00AA" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="rkit" parents="both">
+			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA0000" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA0000" damage="-3000">leather leggings</leggings>
+			<boots color="AA0000" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="4" material="arrow"/>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="red" completion="100%">
+        <destroyable name="Right" region="red-right" materials="obsidian"/>
+        <destroyable name="Left" region="red-left" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="purple" completion="100%">
+        <destroyable name="Right" region="purple-right" materials="obsidian"/>
+        <destroyable name="Left" region="purple-left" materials="obsidian"/>
+    </destroyables>
+	<filters>
+		<team id="only-red">red</team>
+		<team id="only-purple">purple</team>
+	</filters>
+	<regions>
+		<cylinder id="red-spawn" base="14,70,-762" radius="8" height="12"/>
+		<cylinder id="purple-spawn" base="14,70,-872" radius="8" height="12"/>
+
+		<union id="monuments">
+            <block id="red-right">-13,74,-773</block>
+            <block id="red-left">41,74,-773</block>
+            <block id="purple-right">41,74,-861</block>
+            <block id="purple-left">-13,74,-861</block>
+        </union>
+
+        <apply block="never" enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+        <apply block="never" enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
+
+        <apply enter="only-red" region="red-spawn"/>
+        <apply enter="only-purple" region="purple-spawn"/>
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>apple</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>stone sword</tool>
+		<tool>diamond pickaxe</tool>
+		<tool>stone axe</tool>
+	</toolrepair>
+</map>

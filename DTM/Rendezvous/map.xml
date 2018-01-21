@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Rendezvous</name>
+	<version>1.0.0</version>
+	<objective>Destroy both of the enemy's monuments to win!</objective>
+	<authors>
+		<author uuid="44df6b20-168f-4389-b7ac-434518207c2f"/>
+		<!-- ParaPenguin -->
+	</authors>
+	<teams>
+		<team id="red" color="dark red" max="18">Red Team</team>
+		<team id="blue" color="blue" max="18">Blue Team</team>
+	</teams>
+	<spawns>
+      <spawn team="blue" kit="bkit">
+        <regions yaw="0">
+            <point>-38, 28, -797</point>
+        </regions>
+      </spawn>
+      <spawn team="red" kit="rkit">
+        <regions yaw="0">
+            <point>62, 28, -797</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="0">
+            <point>12, 54, -897</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">iron sword</item>
+			<item slot="1">bow</item>
+			<item slot="27" amount="64">arrow</item>
+			<item slot="2">diamond pickaxe</item>
+			<item slot="3" amount="3">golden apple</item>
+			<item slot="4" amount="32">log</item>
+			<item slot="7" amount="64">glass</item>
+			<item slot="8" amount="32">cooked fish</item>
+		</kit>
+		<kit id="bkit" parents="both">
+			<helmet color="5555FF" damage="-3000">leather helmet</helmet>
+			<chestplate color="5555FF" damage="-3000">leather chestplate</chestplate>
+			<leggings color="5555FF" damage="-3000">leather leggings</leggings>
+			<boots color="5555FF" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="rkit" parents="both">
+			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA0000" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA0000" damage="-3000">leather leggings</leggings>
+			<boots color="AA0000" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="4" material="arrow"/>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="red" completion="100%">
+		<destroyable name="Left" region="red-left" materials="obsidian"/>
+        <destroyable name="Right" region="red-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="blue" completion="100%">
+		<destroyable name="Left" region="blue-left" materials="obsidian"/>
+        <destroyable name="Right" region="blue-right" materials="obsidian"/>
+    </destroyables>
+	<filters>
+		<team id="only-red">red</team>
+		<team id="only-blue">blue</team>
+	</filters>
+	<regions>
+		<cuboid id="red-spawn" min="61, 26, -788" max="65, 31, -808"/> 
+		<cuboid id="blue-spawn" min="-41, 26, -808" max="-37, 31, -788"/> 
+ 		<cuboid id="nobuild-one" max="67, 37, -807" min="59, 33, -812"/>
+		<cuboid id="nobuild-two" max="67, 37, -789" min="59, 33, -784"/>
+		<cuboid id="nobuild-three" max="65, 26, -788" min="61, 33, -785"/>
+		<cuboid id="nobuild-four" max="65, 26, -808" min="61, 33, -811"/>
+		<cuboid id="nobuild-five" max="61, 26, -788" min="65, 31, -808"/>
+		<cuboid id="nobuild-six" max="-43, 37, -789" min="-35, 33, -784"/>
+		<cuboid id="nobuild-seven" max="-35, 37, -812" min="-43, 33, -807"/>
+		<cuboid id="nobuild-eight" max="-37, 26, -808" min="-41, 33, -811"/>
+		<cuboid id="nobuild-nine" max="-37, 26, -788" min="-41, 33, -785"/>
+		<cuboid id="nobuild-ten" max="-41, 26, -808" min="-37, 31, -788"/>
+		<cuboid id="nobuild-eleven" max="62, 24, -797" min="64, 24, -799"/>
+		<cuboid id="nobuild-twelve" max="-40, 24, -799" min="-38, 24, -797"/>
+		
+		<union id="monuments">
+            <block id="red-left">108, 37, -833</block>
+            <block id="red-right">108, 37, -763</block>
+            <block id="blue-left">-84, 37, -763</block>
+            <block id="blue-right">-84, 37, -833</block>
+        </union>
+
+        <apply block="never" enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+        <apply block="never" enter="only-blue" region="blue-spawn" message="You may not enter the enemy spawn!"/>
+		<apply block="never" region="nobuild-one" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-two" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-three" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-four" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-five" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-six" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-seven" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-eight" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-nine" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-ten" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-eleven" message="You may not modify blocks in this area."/>
+		<apply block="never" region="nobuild-twelve" message="You may not modify blocks in this area."/>
+		
+
+        <apply enter="only-red" region="red-spawn"/>
+        <apply enter="only-blue" region="blue-spawn"/>
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>cooked fish</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>glass</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>iron sword</tool>
+		<tool>diamond pickaxe</tool>
+	</toolrepair>
+</map>

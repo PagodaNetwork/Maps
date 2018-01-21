@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Floe</name>
+	<version>1.1.0</version>
+	<objective>Destroy both of the enemy's monuments to win!</objective>
+	<authors>
+		<author uuid="63b88dff-c6b4-4e08-bd17-aae089b12e95"/>
+		<!-- Rilo -->
+	</authors>
+	<teams>
+		<team id="green" color="dark green" max="20">Green Team</team>
+		<team id="red" color="dark red" max="20">Red Team</team>
+	</teams>
+	<spawns>
+		<spawn team="green" kit="gkit">
+			<regions yaw="-90">
+				<point>10.5,93,-35.5</point>
+			</regions>
+		</spawn>
+		<spawn team="red" kit="rkit">
+			<regions yaw="90">
+				<point>176.5,93,-35.5</point>
+			</regions>
+		</spawn>
+		<default>
+			<regions yaw="180">
+				<point>93.5,123,-34.5</point>
+			</regions>
+		</default>
+	</spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">iron sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28">arrow</item>
+			<item slot="2" enchantment="dig speed">diamond pickaxe</item>
+			<item slot="3" enchantment="dig speed">wood spade</item>
+			<item slot="4" amount="3">golden apple</item>
+			<item slot="5" amount="48">log</item>
+			<item slot="8" amount="16">cooked beef</item>
+		</kit>
+		<kit id="gkit" parents="both">
+			<helmet color="00AA00" damage="-3000">leather helmet</helmet>
+			<chestplate color="00AA00" damage="-3000">leather chestplate</chestplate>
+			<leggings color="00AA00" damage="-3000">leather leggings</leggings>
+			<boots color="00AA00" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="rkit" parents="both">
+			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA0000" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA0000" damage="-3000">leather leggings</leggings>
+			<boots color="AA0000" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+	<destroyables owner="red" completion="100%">
+		<destroyable name="Left" region="red-left" materials="obsidian"/>
+		<destroyable name="Right" region="red-right" materials="obsidian"/>
+	</destroyables>
+	<destroyables owner="green" completion="100%">
+		<destroyable name="Left" region="green-left" materials="obsidian"/>
+		<destroyable name="Right" region="green-right" materials="obsidian"/>
+	</destroyables>
+	<filters>
+		<team id="only-red">red</team>
+		<team id="only-green">green</team>
+	</filters>
+	<regions>
+		<cuboid id="red-spawn" min="6,79,-40" max="14,110,-32"/>
+		<cuboid id="green-spawn" min="180,79,-32" max="172,110,-40"/>
+		<union id="monuments">
+			<cuboid id="red-left" min="158,92,16" max="158,91,16"/>
+			<cuboid id="red-right" min="158,92,-88" max="158,91,-88"/>
+			<cuboid id="green-left" min="28,92,-88" max="28,91,-88"/>
+			<cuboid id="green-right" min="28,92,16" max="28,91,16"/>
+		</union>
+		<apply block="never" enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+		<apply block="never" enter="only-green" region="green-spawn" message="You may not enter the enemy spawn!"/>
+		<apply enter="only-red" region="red-spawn"/>
+		<apply enter="only-green" region="green-spawn"/>
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>cooked beef</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>iron sword</tool>
+		<tool>diamond pickaxe</tool>
+		<tool>wood spade</tool>
+	</toolrepair>
+</map>

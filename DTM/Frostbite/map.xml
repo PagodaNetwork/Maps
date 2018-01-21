@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Frostbite</name>
+	<version>1.1.0</version>
+	<objective>Destroy all three of the enemy's monuments to win!</objective>
+	<authors>
+		<author uuid="44df6b20-168f-4389-b7ac-434518207c2f"/>
+		<!-- ParaPenguin -->
+	</authors>
+	<teams>
+		<team id="purple" color="dark purple" max="20">Purple Team</team>
+		<team id="red" color="dark red" max="20">Red Team</team>
+	</teams>
+	<spawns>
+      <spawn team="purple" kit="pkit">
+        <regions yaw="90">
+            <point>116, 35, -695</point>
+        </regions>
+      </spawn>
+      <spawn team="red" kit="rkit">
+        <regions yaw="-90">
+            <point>-45, 35, -813</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="-90">
+            <point>-16, 68, -737</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">iron sword</item>
+			<item slot="1">bow</item>
+			<item slot="28" amount="48">arrow</item>
+			<item slot="2" enchantment="dig speed">diamond pickaxe</item>
+			<item slot="3" amount="3">golden apple</item>
+			<item slot="4" amount="64">glass</item>
+			<item slot="5" amount="32">log</item>
+			<item slot="8" amount="16">cooked fish</item>
+		</kit>
+		<kit id="pkit" parents="both">
+			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
+			<chestplate damage="-3000" material="chainmail chestplate"/>
+			<leggins damage="-3000" material="gold leggings"/>
+			<boots color="AA00AA" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="rkit" parents="both">
+			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
+			<chestplate damage="-3000" material="chainmail chestplate"/>
+			<leggins damage="-3000" material="gold leggings"/>
+			<boots color="AA0000" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="red" completion="100%">
+		<destroyable name="Front-Left" region="red-front-left" materials="obsidian"/>
+        <destroyable name="Back-Left" region="red-back-left" materials="obsidian"/>
+        <destroyable name="Front-Right" region="red-front-right" materials="obsidian"/>
+		<destroyable name="Back-Right" region="red-back-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="purple" completion="100%">
+		<destroyable name="Front-Left" region="purple-front-left" materials="obsidian"/>
+        <destroyable name="Back-Left" region="purple-back-left" materials="obsidian"/>
+        <destroyable name="Front-Right" region="purple-front-right" materials="obsidian"/>
+		<destroyable name="Back-Right" region="purple-back-right" materials="obsidian"/>
+    </destroyables>
+	<filters>
+		<team id="only-red">red</team>
+		<team id="only-purple">purple</team>
+	</filters>
+	<regions>
+		<cylinder id="red-spawn" base="-44, 33, -814" radius="11" height="7"/>
+		<cylinder id="purple-spawn" base="116, 33, -695" radius="11" height="7"/>
+		<cuboid id="nobuild-one" max="-24, 70, -729" min="-10, 64, -743"/>
+
+		<union id="monuments">
+            <block id="red-front-left">-38, 50, -805</block>
+			<block id="red-back-left">-54, 55, -806</block>
+			<block id="red-front-right">-38, 50, -823</block>
+            <block id="red-back-right">-54, 55, -822</block>
+			<block id="purple-front-left">108, 50, -705</block>
+			<block id="purple-back-left">124, 55, -704</block>
+            <block id="purple-front-right">108, 50, -687</block>
+			<block id="purple-back-right">124, 55, -688</block>
+        </union>
+
+        <apply block="never" enter="only-red" region="red-spawn" message="You can not modify blocks or enter here!"/>
+        <apply block="never" enter="only-purple" region="purple-spawn" message="You can not modify blocks or enter here!"/>
+		<apply block="never" region="nobuild-one" message="You can not place blocks here."/>
+
+        <apply enter="only-red" region="red-spawn"/>
+        <apply enter="only-purple" region="purple-spawn"/>
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>glass</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+		<item>cooked fish</item>
+		<item>golden apple</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>iron sword</tool>
+		<tool>diamond pickaxe</tool>
+	</toolrepair>
+</map>
