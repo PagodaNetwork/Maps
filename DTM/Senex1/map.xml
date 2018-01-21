@@ -73,7 +73,6 @@
 	<regions>
 		<cylinder id="lime-spawn" base="35, 19, -744" radius="8" height="6"/>
 		<cylinder id="cyan-spawn" base="129, 19, -744" radius="8" height="6"/>
-		<cuboid id="nobuild-one" max="183, 0, -726" min="-19, 38, -762"/>
 
 		<union id="monuments">
             <block id="lime-left">-12, 23, -733</block>
@@ -84,7 +83,6 @@
 
         <apply block="never" region="lime-spawn" message="You may not modify blocks here!"/>
         <apply block="never" region="cyan-spawn" message="You may not modify blocks here!"/>
-		<apply block="never" region="nobuild-one" message="You may not modify blocks here!"/>
 
 	</regions>
 	<itemremove>
