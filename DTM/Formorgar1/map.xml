@@ -45,13 +45,13 @@
 		<kit id="pkit" parents="both">
 			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
 			<chestplate color="AA00AA" damage="-3000">leather chestplate</chestplate>
-			<leggins damage="-3000" material="iron leggings"/>
+			<leggings damage="-3000" material="iron leggings"/>
 			<boots color="AA00AA" damage="-3000">leather boots</boots>
 		</kit>
 		<kit id="ykit" parents="both">
 			<helmet color="FFFF55" damage="-3000">leather helmet</helmet>
 			<chestplate color="FFFF55" damage="-3000">leather chestplate</chestplate>
-			<leggins damage="-3000" material="iron leggings"/>
+			<leggings damage="-3000" material="iron leggings"/>
 			<boots color="FFFF55" damage="-3000">leather boots</boots>
 		</kit>
 	</kits>

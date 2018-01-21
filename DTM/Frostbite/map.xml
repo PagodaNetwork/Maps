@@ -42,13 +42,13 @@
 		<kit id="pkit" parents="both">
 			<helmet color="AA00AA" damage="-3000">leather helmet</helmet>
 			<chestplate damage="-3000" material="chainmail chestplate"/>
-			<leggins damage="-3000" material="gold leggings"/>
+			<leggings damage="-3000" material="gold leggings"/>
 			<boots color="AA00AA" damage="-3000">leather boots</boots>
 		</kit>
 		<kit id="rkit" parents="both">
 			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
 			<chestplate damage="-3000" material="chainmail chestplate"/>
-			<leggins damage="-3000" material="gold leggings"/>
+			<leggings damage="-3000" material="gold leggings"/>
 			<boots color="AA0000" damage="-3000">leather boots</boots>
 		</kit>
 	</kits>
@@ -89,17 +89,15 @@
 			<block id="purple-back-right">124, 55, -688</block>
         </union>
 
-        <apply block="never" enter="only-red" region="red-spawn" message="You can not modify blocks or enter here!"/>
-        <apply block="never" enter="only-purple" region="purple-spawn" message="You can not modify blocks or enter here!"/>
+        <apply block="never" region="red-spawn" message="You can not place blocks here."/>
+        <apply block="never" region="purple-spawn" message="You can not place blocks here."/>
 		<apply block="never" region="nobuild-one" message="You can not place blocks here."/>
 
-        <apply enter="only-red" region="red-spawn"/>
-        <apply enter="only-purple" region="purple-spawn"/>
 	</regions>
 	<itemremove>
 		<item>leather helmet</item>
-		<item>leather chestplate</item>
-		<item>leather leggings</item>
+		<item>chainmail chestplate</item>
+		<item>gold leggings</item>
 		<item>leather boots</item>
 		<item>glass</item>
 		<item>arrow</item>
