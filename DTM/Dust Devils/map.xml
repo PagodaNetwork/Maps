@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Dust Devils</name>
+	<version>1.0.0</version>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
+	<authors>
+		<author uuid="23b7218d-fd09-43ef-98ea-4f2918428fb5"/>
+		<!-- Bumblebeetle -->
+	</authors>
+	<teams>
+		<team id="orange" color="gold" max="20">Orange Team</team>
+		<team id="red" color="dark red" max="20">Red Team</team>
+	</teams>
+	<spawns>
+      <spawn team="orange" kit="okit">
+        <regions yaw="-180">
+            <point>11, 72, 103</point>
+        </regions>
+      </spawn>
+      <spawn team="red" kit="rkit">
+        <regions yaw="0">
+            <point>-3, 76,-88</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="90">
+            <point>138, 123, 1</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">iron sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28" amount="1">arrow</item>
+			<item slot="2">diamond pickaxe</item>
+			<item slot="3" amount="32">log</item>
+			<item slot="4" amount="64">glass</item>
+			<item slot="5" amount="64">sandstone</item>
+			<item slot="6" amount="2">golden apple</item>
+			<item slot="7" amount="16">cooked beef</item>
+		</kit>
+		<kit id="okit" parents="both">
+			<helmet color="FFAA00" damage="-3000">leather helmet</helmet>
+			<chestplate color="FFAA00" damage="-3000">leather helmet</chestplate>
+			<leggings color="FFAA00" damage="-3000">leather leggings</leggings>
+			<boots color="FFAA00" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="rkit" parents="both">
+			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA0000" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA0000" damage="-3000">leather leggings</leggings>
+			<boots color="AA0000" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="orange" completion="100%">
+		<destroyable name="Back" region="orange-back" mode-changes="true" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="red" completion="100%">
+		<destroyable name="Back" region="red-back" mode-changes="true" materials="obsidian"/>
+    </destroyables>
+	<modes>
+		<mode material="gold block" after="55m"/>
+		<mode material="coal block" after="95m"/>
+	</modes>
+	<filters>
+		<team id="only-red">red</team>
+		<team id="only-orange">orange</team>
+	</filters>
+	<maxbuildheight>202</maxbuildheight>
+	<regions>
+		<sphere id="orange-2" origin="11, 71, 88" radius="4"/>
+		<sphere id="red-2" origin="-3, 75, -73" radius="4"/>
+		<cuboid id="red-spawn" max="-9, 73, -91" min="1, 80, -77"/>
+		<cuboid id="orange-spawn" max="16, 69, 105" min="6, 76, 90"/>
+
+		<union id="monuments">
+            <block id="red-back">-4, 78, -98</block>
+			<block id="orange-back">11, 74, 112</block>
+        </union>
+
+        <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+        <apply block="never" region="orange-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="red-2" message="You may not modify blocks here!"/>
+		<apply block="never" region="orange-2" message="You may not modify blocks here!"/>
+		
+		<apply enter="only-orange" region="orange-spawn" message="You may not enter here!"/>
+		<apply enter="only-orange" region="orange-2" message="You may not enter here!"/>
+        <apply enter="only-red" region="red-spawn" message="You may not enter here!"/>
+		<apply enter="only-red" region="red-2" message="You may not enter here!"/>
+		
+		<apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="red-2" message="You may not modify blocks here!"/>
+		<apply block="never" region="orange-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="orange-2" message="You may not modify blocks here!"/>
+		
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>glass</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>sandstone</item>
+		<item>obsidian</item>
+		<item>cooked beef</item>
+		<item>golden apple</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>iron sword</tool>
+		<tool>diamond pickaxe</tool>
+	</toolrepair>
+</map>

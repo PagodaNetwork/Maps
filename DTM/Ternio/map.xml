@@ -2,7 +2,7 @@
 <map proto="1.4.2">
 	<name>Ternio</name>
 	<version>1.1.0</version>
-	<objective>Destroy all three of the enemy's monuments to win!</objective>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
 	<authors>
 		<author uuid="44df6b20-168f-4389-b7ac-434518207c2f"/>
 		<!-- ParaPenguin -->

@@ -2,7 +2,7 @@
 <map proto="1.4.3">
 <name>A New Day II: DTM</name>
 <version>1.0</version>
-<objective>Destroy the Monuments!</objective>
+<objective>Destroy the enemy's monument(s) to win!</objective>
 <authors>
 	<author uuid="b5071a63-bba3-491a-909f-02db314f4319" contribution="Built map and Made xml"/> <!-- dcstarwars -->
 </authors>

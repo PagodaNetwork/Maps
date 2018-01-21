@@ -2,7 +2,7 @@
 <map proto="1.4.2">
 	<name>Castle Adventure</name>
 	<version>1.0.4</version>
-	<objective>Destroy both of the enemy's monuments to win!</objective>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
 	<authors>
 		<author uuid="450c9fe1-ec3f-4d72-af15-bee89c7ef659"/>
 		<!-- Jessamania -->

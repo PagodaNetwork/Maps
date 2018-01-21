@@ -2,7 +2,7 @@
 <map proto="1.4.2">
 	<name>Halcyon</name>
 	<version>1.0.4</version>
-	<objective>Destroy both of the enemy's monuments to win!</objective>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
 	<authors>
 		<author uuid="8242e55e-cc6a-458a-b272-a2b34918045f"/>
 		<!-- keenan -->

@@ -2,7 +2,7 @@
 <map proto="1.4.2">
 	<name>Crusade</name>
 	<version>1.0.0</version>
-	<objective>Destroy all three of the enemy's monuments to win!</objective>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
 	<authors>
 		<author uuid="3893a242-cc17-447e-9b1c-774fc8941af8"/>
 		<!-- G Skippy -->
