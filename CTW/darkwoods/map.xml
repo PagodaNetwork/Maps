@@ -68,13 +68,13 @@
 </filters>
 <regions>
 	<negative id="void">
+        <union id="playable">
+            <rectangle min="-49,-40" max="7,58"/>
+            <rectangle min="7,-16" max="-49,2"/>
+        </union>
 		<union id="spawns">
 			<cuboid id="green-spawn" min="-112,758,-16" max="-128,49,-40"/>
 			<cuboid id="blue-spawn" min="70,75,-40" max="96,49,-16"/>
-		</union>
-		<union id="midline">
-			<rectangle min="-49,-40" max="7,58"/>
-			<rectangle min="7,-16" max="-49,2"/>
 		</union>
 		<union id="woolrooms">
 			<union id="green-capture-wool">
