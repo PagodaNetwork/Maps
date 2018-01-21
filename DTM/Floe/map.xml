@@ -88,8 +88,8 @@
 			<block>28,92,16</block>
 			<block>28,91,16</block>
 		</union>
-		<apply block="never" enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
-		<apply block="never" enter="only-green" region="green-spawn" message="You may not enter the enemy spawn!"/>
+		<apply block="never" enter="only-red" region="red-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" enter="only-green" region="green-spawn" message="You may not modify blocks here!"/>
 		<apply enter="only-red" region="red-spawn"/>
 		<apply enter="only-green" region="green-spawn"/>
 	</regions>
