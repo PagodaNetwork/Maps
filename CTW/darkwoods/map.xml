@@ -103,8 +103,8 @@
 	</negative>
     <apply block="no-void" message="You may not edit the void area!" region="void"/>
     <apply block="only-iron" message="You may not edit the spawns!" region="spawns"/>
-    <apply enter="only-red" message="You may not enter the enemy spawn!" region="green-spawn"/>
-    <apply enter="only-blue" message="You may not enter the enemy spawn!" region="blue-spawn"/>
+    <apply enter="only-red" message="You may not enter the enemy spawn!" region="blue-spawn"/>
+    <apply enter="only-blue" message="You may not enter the enemy spawn!" region="green-spawn"/>
     <apply block="red-web" message="You may only break webs in the woolroom!" region="green-capture-wool"/>
     <apply enter="only-blue" message="You may not enter your own woolroom!" region="blue-capture-wool"/>
     <apply block="blue-web" message="You may only break webs in the woolroom!" region="blue-capture-wool"/>
