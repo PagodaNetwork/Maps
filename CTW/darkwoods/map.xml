@@ -54,6 +54,9 @@
     <not id="no-void">
         <void/>
     </not>
+    <any id="only-iron">
+        <material>iron block</material>
+    </any>
     <all id="red-web">
         <team>green</team>
         <material>web</material>
@@ -91,6 +94,7 @@
 		</union>
 	</negative>
     <apply block="no-void" message="You may not edit the void area!" region="void"/>
+    <apply block="only-iron" message="You may not edit the spawns!" region="spawns"/>
     <apply enter="only-red" message="You may not enter the enemy spawn!" region="green-spawn"/>
     <apply enter="only-blue" message="You may not enter the enemy spawn!" region="blue-spawn"/>
     <apply block="red-web" message="You may only break webs in the woolroom!" region="green-capture-wool"/>
@@ -102,10 +106,10 @@
     <item amount="1" material="golden apple"/>
 </kill-reward>
 <wools craftable="false">
-    <wool team="blue" color="red" location="-118,55,8" monument="red-wool-wool"/>
-    <wool team="blue" color="pink" location="-118,55,-64" monument="pink-wool-wool"/>
-    <wool team="lime" color="purple" location="76,55,8" monument="purple-wool"/>
-    <wool team="lime" color="yellow" location="76,55,-64" monument="yellow-wool"/>
+    <wool team="blue" color="red" location="-118,55,8" monument="red-wool"/>
+    <wool team="blue" color="pink" location="-118,55,-64" monument="pink-wool"/>
+    <wool team="green" color="purple" location="76,55,8" monument="purple-wool"/>
+    <wool team="green" color="yellow" location="76,55,-64" monument="yellow-wool"/>
 </wools>
 <itemremove>
 	<item>leather helmet</item>
