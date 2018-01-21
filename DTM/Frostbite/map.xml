@@ -89,9 +89,9 @@
 			<block id="purple-back-right">124, 55, -688</block>
         </union>
 
-        <apply block="never" region="red-spawn" message="You can not place blocks here."/>
-        <apply block="never" region="purple-spawn" message="You can not place blocks here."/>
-		<apply block="never" region="nobuild-one" message="You can not place blocks here."/>
+        <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+        <apply block="never" region="purple-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-one" message="You may not modify blocks here!"/>
 
 	</regions>
 	<itemremove>
