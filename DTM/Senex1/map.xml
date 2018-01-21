@@ -70,6 +70,7 @@
 		<team id="only-lime">lime</team>
 		<team id="only-cyan">cyan</team>
 	</filters>
+	<maxbuildheight>38</maxbuildheight>
 	<regions>
 		<cylinder id="lime-spawn" base="35, 19, -744" radius="8" height="6"/>
 		<cylinder id="cyan-spawn" base="129, 19, -744" radius="8" height="6"/>
