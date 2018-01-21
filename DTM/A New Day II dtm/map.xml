@@ -108,17 +108,17 @@
     </kill-reward>
 </kill-rewards>
 <destroyables>
-	<destroyable name="Left Monument" materials="obsidian" mode-changes="true" owner="red" completion="100%">
-		<region><cuboid min="-67,12,245" max="-67,14,245"/></region>
+	<destroyable name="Left" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
+		<region><cuboid min="-67,12,245" max="-67,15,245"/></region>
 	</destroyable>
-	<destroyable name="Right Monument" materials="obsidian" mode-changes="true" owner="red" completion="100%">
-    	<region><cuboid min="-67,12,177" max="-67,14,177"/></region>
+	<destroyable name="Right" materials="obsidian" mode-changes="true" owner="red" completion="100%" repairable="false">
+    	<region><cuboid min="-67,12,177" max="-67,15,177"/></region>
     </destroyable>
-	<destroyable name="Left Monument" materials="obsidian" mode-changes="true" owner="blue" completion="100%">
-    	<region><cuboid min="113,12,177" max="113,14,177"/></region>
+	<destroyable name="Left" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
+    	<region><cuboid min="113,12,177" max="113,15,177"/></region>
 	</destroyable>
-	<destroyable name="Right Monument" materials="obsidian" mode-changes="true" owner="blue" completion="100%">
-    	<region><cuboid min="113,12,245" max="113,14,245"/></region>
+	<destroyable name="Right" materials="obsidian" mode-changes="true" owner="blue" completion="100%" repairable="false">
+    	<region><cuboid min="113,12,245" max="113,15,245"/></region>
     </destroyable>
 </destroyables>
 <modes>
