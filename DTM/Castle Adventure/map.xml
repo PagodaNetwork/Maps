@@ -73,10 +73,10 @@
 		<team id="only-lime">lime</team>
 		<team id="only-pink">pink</team>
 	</filters>
+	<maxbuildheight>127</maxbuildheight>
 	<regions>
 		<cylinder id="lime-spawn" base="-110, 57, -791" radius="9" height="4"/>
 		<cylinder id="pink-spawn" base="52, 57, -791" radius="9" height="4"/>
-		<cuboid id="nobuild-one" max="146, 127, -882" min="-176, 35, -701"/>
 
 		<union id="monuments">
             <block id="lime-left">-161, 61, -779</block>
@@ -87,7 +87,6 @@
 
         <apply block="never" region="lime-spawn" message="You may not modify blocks here!"/>
         <apply block="never" region="pink-spawn" message="You may not modify blocks here!"/>
-		<apply block="never" region="nobuild-one" message="You may not modify blocks here!"/>
 
 	</regions>
 	<itemremove>
