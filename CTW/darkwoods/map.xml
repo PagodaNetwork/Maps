@@ -73,9 +73,17 @@
             <rectangle min="7,-16" max="-49,2"/>
         </union>
 		<union id="spawns">
-			<cuboid id="green-spawn" min="-112,758,-16" max="-128,49,-40"/>
-			<cuboid id="blue-spawn" min="70,75,-40" max="96,49,-16"/>
-		</union>
+            <union id="green-spawn">
+                <rectangle min="-123,-37" max="-131,-20"/>
+                <cuboid min="-122,58,-35" max="-118,60,-19"/>
+                <rectangle min="-118,-19" max="107,-37"/>
+            </union>
+            <union id="blue-spawn">
+                <rectangle id="blue-spawn" min="89,-37" max="81,-18"/>
+                <cuboid min="80,58,-22" max="76,59,-35"/>
+                <rectangle min="76,-38" max="65,-19"/>
+            </union>
+        </union>
 		<union id="woolrooms">
 			<union id="green-capture-wool">
 				<rectangle min="82,-58" max="70,-69"/>
