@@ -79,7 +79,7 @@
                 <rectangle min="-118,-19" max="107,-37"/>
             </union>
             <union id="blue-spawn">
-                <rectangle id="blue-spawn" min="89,-37" max="81,-18"/>
+                <rectangle min="89,-37" max="81,-18"/>
                 <cuboid min="80,58,-22" max="76,59,-35"/>
                 <rectangle min="76,-38" max="65,-19"/>
             </union>
