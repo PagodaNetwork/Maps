@@ -72,11 +72,21 @@
 	<regions>
 		<cuboid id="red-spawn" min="6,79,-40" max="14,110,-32"/>
 		<cuboid id="green-spawn" min="180,79,-32" max="172,110,-40"/>
-		<union id="monuments">
-			<cuboid id="red-left" min="158,92,16" max="158,91,16"/>
-			<cuboid id="red-right" min="158,92,-88" max="158,91,-88"/>
-			<cuboid id="green-left" min="28,92,-88" max="28,91,-88"/>
-			<cuboid id="green-right" min="28,92,16" max="28,91,16"/>
+		<union id="red-left">
+			<block>158,92,16</block>
+			<block>158,91,16</block>
+		</union>
+		<union id="red-right">
+			<block>158,92,-88</block>
+			<block>158,91,-88</block>
+		</union>
+		<union id="green-left">
+			<block>28,92,-88</block>
+			<block>28,91,-88</block>
+		</union>
+		<union id="green-right">
+			<block>28,92,16</block>
+			<block>28,91,16</block>
 		</union>
 		<apply block="never" enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
 		<apply block="never" enter="only-green" region="green-spawn" message="You may not enter the enemy spawn!"/>
