@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<map proto="1.4.2">
+	<name>Rendezvous CTW</name>
+	<version>1.1.0</version>
+	<authors>
+		<author uuid="44df6b20168f4389b7ac434518207c2f"/> <!-- ParaPenguin -->
+		<author uuid="d9b4ffbc11d0453aa93f82dc59fca4b6"/> <!-- hugWulf -->
+		<author uuid="0b8f95fa0f404f289fd0b8e243bb6800"/> <!-- Fouled -->
+	</authors>
+	<teams>
+		<team id="green" max="20" color="green">Green Team</team>
+		<team id="blue" color="blue" max="20">Blue Team</team>
+	</teams>
+	<kits>
+		<kit id="default">
+			<helmet material="leather helmet" team-color="true"/>
+            <item slot="0" material="iron sword"/>
+            <item slot="1" material="bow" enchantment="arrow infinite:1"/>
+            <item slot="2" material="diamond pickaxe" enchantment="durability:3"/>
+            <item slot="3" material="golden apple" amount="3"/>
+            <item slot="4" material="log" amount="64"/>
+            <item slot="5" material="glass" amount="32"/>
+            <item slot="7" material="cooked beef" amount="32"/>
+            <item slot="27" material="arrow" amount="1"/>
+        </kit>
+        <kit id="green-kit" parents="default">
+        	<helmet material="leather helmet" color="00AA00"/>
+        </kit>
+        <kit id="blue-kit" parents="default">
+        	<helmet material="leather helmet" color="5555FF"/>
+    </kits>
+	<spawns>
+		<default>
+			<region yaw="180">
+				<point>-235.5,38,56.5</point>
+			</region>
+		</default>
+		<spawn team="green" kit="green-kit">
+			<region yaw="-90">
+				<point>-333.5,12,-11.5</point>
+			</region>
+		</spawn>
+		<spawn team="blue" kit="blue-kit">
+			<region yaw="90">
+				<point>-137.5,12,-11.5</point>
+			</region>
+		</spawn>
+	</spawns>
+	<filters>
+		<team id="only-red">green</team>
+		<team id="only-blue">blue</team>
+		<any id="spawn-protection">
+			<material>obsidian</material>.
+		</any>
+		<not id="no-void">
+			<void/>
+		</not>
+	</filters>
+	<regions>
+		<negative id="void">
+			<union id="midlane">
+				<cuboid min="-283,0,22" max="-189,36,-46"/>
+			</union>
+			<union id="woolrooms">
+				<union id="green-owned-wools">
+					<cuboid id="cyan-woolroom" min="-404, 0, 22" max="-420, 36, 12"/> <!-- Room is Wool Cyan -->
+					<cuboid id="purple-woolroom" min="-404, 0, -36" max="-420, 36, -46"/> <!-- Room is Wool Purple -->
+				</union>
+				<union id="blue-owned-wools">
+					<cuboid id="orange-woolroom" min="-68, 0, 12" max="-52, 36, 22"/> <!-- Room is Wool Orange -->
+					<cuboid id="yellow-woolroom" min="-68, 0, -46" max="-52, 36, -36"/> <!-- Room is Wool Yellow -->
+				</union>
+			</union>
+			<union id="spawns">
+				<cuboid id="green-spawn" min="-324, 7, -17" max="-342, 17, -5"/>
+				<cuboid id="blue-spawn" min="-146, 7, -5" max="-128, 17, -17"/>
+			</union>
+			<union id="wool-placements">
+				<block location="-354,8,-11" id="orange-wool"/>
+				<block location="-354,8,-13" id="yellow-wool"/>
+				<block location="-118,8,-11" id="cyan-wool"/>
+				<block location="-118,8,-13" id="purple-wool"/>
+			</union>
+		</negative>
+		<apply enter="only-red" message="You may not enter your own woolroom!" region="blue-owned-wools"/>
+		<apply enter="only-blue" message="You may not enter your own woolroom!" region="green-owned-wools"/>
+		<apply block="no-void" message="You may not edit the void area!" region="void"/>
+		<apply enter="only-red" message="You may not enter the enemy spawn!" region="green-spawn"/>
+		<apply enter="only-blue" message="You may not enter the enemy spawn!" region="blue-spawn"/>
+		<apply block="spawn-protection" message="You may not edit your spawn!" region="spawns"/>
+	</regions>
+	<wools craftable="false">
+		<wool team="green" color="orange" monument="orange-wool"/>
+		<wool team="green" color="yellow" monument="yellow-wool"/>
+		<wool team="blue" color="cyan" monument="cyan-wool"/>
+		<wool team="blue" color="purple" monument="purple-wool"/>
+	</wools>
+	<toolrepair>
+		<tool>iron sword</tool>
+		<tool>bow</tool>
+		<tool>diamond pickaxe</tool>
+		<tool>iron axe</tool>
+	</toolrepair>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>arrow</item>
+		<item>stained clay</item>
+		<item>wool</item>
+	</itemremove>
+	<maxbuildheight>36</maxbuildheight>
+	<respawn delay="5s" freeze="5s"/>
+</map>
