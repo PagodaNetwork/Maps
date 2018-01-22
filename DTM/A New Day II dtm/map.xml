@@ -164,6 +164,7 @@
     <item>leather chestplate</item>
     <item>seeds</item>
     <item>flint</item>
+    <item>obsidian</item>
 </itemremove>
 <gamerules>
     <doFireTick>false</doFireTick>
