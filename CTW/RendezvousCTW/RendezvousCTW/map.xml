@@ -68,11 +68,11 @@
 			</union>
 			<union id="iron-area">
 				<intersect id="green-iron">
-					<cylinder base="-356.5,5,-11.5" radius="7" height="15"/>
+					<cylinder base="-356.5,5,-11.5" radius="9" height="15"/>
 					<rectangle min="-354,-6" max="-362,-18"/>
 				</intersect>
 				<intersect id="blue-iron">
-					<cylinder base="-114.5,5,-11.5" radius="7" height="15"/>
+					<cylinder base="-114.5,5,-11.5" radius="9" height="15"/>
 					<rectangle min="-118,-18" max="-110,-6"/>
 				</intersect>
 			</union>			<union id="woolrooms">
