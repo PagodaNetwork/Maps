@@ -79,11 +79,17 @@
 			<union id="spawns">
 				<union id="green-spawn">
 					<cuboid min="-324, 7, -17" max="-342, 17, -5"/>
-					<cylinder base="-356.5,5,-11.5" radius="7" height="15"/>
+					<intersect id="green-iron">
+						<cylinder base="-356.5,5,-11.5" radius="7" height="15"/>
+						<rectangle min="-354,-6" max="-362,-18"/>
+					</intersect>
 				</union>
 				<union id="blue-spawn">
 					<cuboid min="-146, 7, -5" max="-128, 17, -17"/>
-					<cylinder base="-114.5,5,-11.5" radius="7" height="15"/>
+					<intersect id="blue-iron">
+						<cylinder base="-114.5,5,-11.5" radius="7" height="15"/>
+						<rectangle min="-118,-18" max="-110,-6"/>
+					</intersect>
 				</union>
 			</union>
 			<union id="wool-placements">
