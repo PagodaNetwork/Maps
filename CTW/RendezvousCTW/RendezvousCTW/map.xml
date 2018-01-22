@@ -69,7 +69,7 @@
 			<union id="iron-area">
 				<intersect id="green-iron">
 					<cylinder base="-356.5,5,-11.5" radius="9" height="15"/>
-					<rectangle min="-354,-6" max="-362,-18"/>
+					<rectangle min="-353,-4" max="-362,-18"/>
 				</intersect>
 				<intersect id="blue-iron">
 					<cylinder base="-114.5,5,-11.5" radius="9" height="15"/>
