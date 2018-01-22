@@ -73,7 +73,7 @@
 				</intersect>
 				<intersect id="blue-iron">
 					<cylinder base="-114.5,5,-11.5" radius="9" height="15"/>
-					<rectangle min="-118,-18" max="-110,-6"/>
+					<rectangle min="-119,-20" max="-110,-6"/>
 				</intersect>
 			</union>			<union id="woolrooms">
 				<union id="green-owned-wools">
