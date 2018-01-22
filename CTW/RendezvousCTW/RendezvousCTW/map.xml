@@ -51,8 +51,11 @@
 	<filters>
 		<team id="only-red">green</team>
 		<team id="only-blue">blue</team>
-		<any id="spawn-protection">
-			<material>obsidian</material>.
+		<any id="woolroom-protection">
+			<material>obsidian</material>
+		</any>
+		<any id="only-iron">
+			<material>iron block</material>
 		</any>
 		<not id="no-void">
 			<void/>
@@ -74,8 +77,14 @@
 				</union>
 			</union>
 			<union id="spawns">
-				<cuboid id="green-spawn" min="-324, 7, -17" max="-342, 17, -5"/>
-				<cuboid id="blue-spawn" min="-146, 7, -5" max="-128, 17, -17"/>
+				<union id="green-spawn">
+					<cuboid min="-324, 7, -17" max="-342, 17, -5"/>
+					<cylinder base="-356.5,5,-11.5" radius="7" height="15"/>
+				</union>
+				<union id="blue-spawn">
+					<cuboid min="-146, 7, -5" max="-128, 17, -17"/>
+					<cylinder base="-114.5,5,-11.5" radius="7" height="15"/>
+				</union>
 			</union>
 			<union id="wool-placements">
 				<block location="-354,8,-11" id="orange-wool"/>
@@ -89,7 +98,8 @@
 		<apply block="no-void" message="You may not edit the void area!" region="void"/>
 		<apply enter="only-red" message="You may not enter the enemy spawn!" region="green-spawn"/>
 		<apply enter="only-blue" message="You may not enter the enemy spawn!" region="blue-spawn"/>
-		<apply block="spawn-protection" message="You may not edit your spawn!" region="spawns"/>
+		<apply block="only-iron" message="You may not edit your spawn!" region="spawns"/>
+		<apply block="woolroom-protection" message="You may not edit the woolroom" region="woolrooms"/>
 	</regions>
 	<wools craftable="false">
 		<wool team="green" color="orange" monument="orange-wool" location="-54,7,17"/>
