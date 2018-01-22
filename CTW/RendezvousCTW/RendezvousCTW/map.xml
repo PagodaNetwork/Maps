@@ -2,6 +2,7 @@
 <map proto="1.4.2">
 	<name>Rendezvous CTW</name>
 	<version>1.1.0</version>
+	<objective>Capture and return your teams wools</objective>
 	<authors>
 		<author uuid="44df6b20168f4389b7ac434518207c2f"/> <!-- ParaPenguin -->
 		<author uuid="d9b4ffbc11d0453aa93f82dc59fca4b6"/> <!-- hugWulf -->
@@ -91,10 +92,10 @@
 		<apply block="spawn-protection" message="You may not edit your spawn!" region="spawns"/>
 	</regions>
 	<wools craftable="false">
-		<wool team="green" color="orange" monument="orange-wool"/>
-		<wool team="green" color="yellow" monument="yellow-wool"/>
-		<wool team="blue" color="cyan" monument="cyan-wool"/>
-		<wool team="blue" color="purple" monument="purple-wool"/>
+		<wool team="green" color="orange" monument="orange-wool" location="-54,7,17"/>
+		<wool team="green" color="yellow" monument="yellow-wool" location="-54,7,-41"/>
+		<wool team="blue" color="cyan" monument="cyan-wool" location="-418,7,17"/>
+		<wool team="blue" color="purple" monument="purple-wool" location="-418,7,-41"/>
 	</wools>
 	<toolrepair>
 		<tool>iron sword</tool>
