@@ -66,7 +66,16 @@
 			<union id="midlane">
 				<cuboid min="-283,0,22" max="-189,36,-46"/>
 			</union>
-			<union id="woolrooms">
+			<union id="iron-area">
+				<intersect id="green-iron">
+					<cylinder base="-356.5,5,-11.5" radius="7" height="15"/>
+					<rectangle min="-354,-6" max="-362,-18"/>
+				</intersect>
+				<intersect id="blue-iron">
+					<cylinder base="-114.5,5,-11.5" radius="7" height="15"/>
+					<rectangle min="-118,-18" max="-110,-6"/>
+				</intersect>
+			</union>			<union id="woolrooms">
 				<union id="green-owned-wools">
 					<cuboid id="cyan-woolroom" min="-404, 0, 22" max="-420, 36, 12"/> <!-- Room is Wool Cyan -->
 					<cuboid id="purple-woolroom" min="-404, 0, -36" max="-420, 36, -46"/> <!-- Room is Wool Purple -->
@@ -89,16 +98,6 @@
 				<block location="-354,8,-13" id="yellow-wool"/>
 				<block location="-118,8,-11" id="cyan-wool"/>
 				<block location="-118,8,-13" id="purple-wool"/>
-			</union>
-			<union id="iron-area">
-				<intersect id="green-iron">
-					<cylinder base="-356.5,5,-11.5" radius="7" height="15"/>
-					<rectangle min="-354,-6" max="-362,-18"/>
-				</intersect>
-				<intersect id="blue-iron">
-					<cylinder base="-114.5,5,-11.5" radius="7" height="15"/>
-					<rectangle min="-118,-18" max="-110,-6"/>
-				</intersect>
 			</union>
 		</negative>
 		<apply enter="only-red" message="You may not enter your own woolroom!" region="blue-owned-wools"/>
