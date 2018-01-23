@@ -37,7 +37,7 @@
 			<item slot="3" amount="3">golden apple</item>
 			<item slot="4" amount="32">log</item>
 			<item slot="5" amount="64">glass</item>
-			<item slot="8" amount="24">cooked potato</item>
+			<item slot="8" amount="24">baked potato</item>
 		</kit>
 		<kit id="ckit" parents="both">
 			<helmet color="00AAAA" damage="-3000">leather helmet</helmet>
@@ -107,7 +107,7 @@
 		<item>log</item>
 		<item>wood</item>
 		<item>obsidian</item>
-		<item>cooked potato</item>
+		<item>baked potato</item>
 		<item>golden apple</item>
 	</itemremove>
 	<toolrepair>
