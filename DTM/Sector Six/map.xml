@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Sector Six</name>
+	<version>1.1.0</version>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
+	<authors>
+		<author uuid="da98a2f1-673c-4cec-b547-e0a342abfde4"/>
+		<!-- timausTestified -->
+	</authors>
+	<teams>
+		<team id="cyan" color="dark aqua" max="20">Cyan Team</team>
+		<team id="orange" color="gold" max="20">Orange Team</team>
+	</teams>
+	<spawns>
+      <spawn team="cyan" kit="ckit">
+        <regions yaw="180">
+            <point>0, 35, 0</point>
+        </regions>
+      </spawn>
+      <spawn team="orange" kit="okit">
+        <regions yaw="0">
+            <point>0, 35, -154</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="90">
+            <point>107, 83, -74</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">stone sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28" amount="1">arrow</item>
+			<item slot="2">diamond pickaxe</item>
+			<item slot="3" amount="3">golden apple</item>
+			<item slot="4" amount="32">log</item>
+			<item slot="5" amount="64">glass</item>
+			<item slot="8" amount="24">cooked potato</item>
+		</kit>
+		<kit id="ckit" parents="both">
+			<helmet color="00AAAA" damage="-3000">leather helmet</helmet>
+		</kit>
+		<kit id="okit" parents="both">
+			<helmet color="FFAA00" damage="-3000">leather helmet</helmet>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="cyan" completion="100%">
+		<destroyable name="Left" region="cyan-left" materials="obsidian"/>
+        <destroyable name="Back" region="cyan-back" materials="obsidian"/>
+        <destroyable name="Right" region="cyan-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="orange" completion="100%">
+		<destroyable name="Left" region="orange-left" materials="obsidian"/>
+        <destroyable name="Back" region="orange-back" materials="obsidian"/>
+        <destroyable name="Right" region="orange-right" materials="obsidian"/>
+    </destroyables>
+	<filters>
+		<team id="only-cyan">cyan</team>
+		<team id="only-orange">orange</team>
+	</filters>
+	<regions>
+		<cylinder id="cyan-spawn" base="0, 34, 0" height="15" radius="15"/>
+		<cylinder id="orange-spawn" base="0, 34, -155" height="15" radius="15"/>
+		<cuboid id="nobuild-one" max="-39, 36, -194" min="-39, 36, -194"/>
+		<cuboid id="nobuild-two" max="39, 36, -194" min="39, 36, -194"/>
+		<cuboid id="nobuild-three" max="39, 36, 39" min="-39, 36, 39"/>
+		<cuboid id="nobuild-four" max="-39, 36, 39" min="-39, 36, 39"/>
+		<cuboid id="nobuild-five" max="-200, 70, 200" min="200, 70, -200"/>
+		<cuboid id="enchanting-one" max="39, 37, 39" min="39, 37, 39"/>
+		<cuboid id="enchanting-two" max="-39, 37, 39" min="-39, 37, 39"/>
+		<cuboid id="enchanting-three" max="-39, 37, -194" min="-39, 37, -194"/>
+		<cuboid id="enchanting-four" max="39, 37, -194" min="39, 37, -194"/>
+
+		<union id="monuments">
+            <block id="cyan-left">71, 38, 0</block>
+			<block id="cyan-back">0, 38, 71</block>
+			<block id="cyan-right">-71, 38, 0</block>
+            <block id="orange-left">-71, 38, -155</block>
+			<block id="orange-back">0, 38, -226</block>
+			<block id="orange-right">71, 38, -155</block>
+        </union>
+
+        <apply block="never" region="cyan-spawn" message="You may not modify blocks here!"/>
+        <apply block="never" region="orange-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-one" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-two" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-three" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-four" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-five" message="You may not modify blocks here!"/>
+		<apply block="never" region="enchanting-one" message="You may not modify the enchanting table/area!"/>
+		<apply block="never" region="enchanting-two" message="You may not modify the enchanting table/area!"/>
+		<apply block="never" region="enchanting-three" message="You may not modify the enchanting table/area!"/>
+		<apply block="never" region="enchanting-four" message="You may not modify the enchanting table/area!"/>
+
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>glass</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+		<item>cooked potato</item>
+		<item>golden apple</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>stone sword</tool>
+		<tool>diamond pickaxe</tool>
+	</toolrepair>
+</map>
