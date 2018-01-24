@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Luar</name>
+	<version>1.1.0</version>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
+	<authors>
+		<author uuid="3893a242-cc17-447e-9b1c-774fc8941af8"/>
+		<!-- G_Skippy -->
+	</authors>
+	<teams>
+		<team id="lime" color="green" max="25">Lime Team</team>
+		<team id="yellow" color="yellow" max="25">Yellow Team</team>
+	</teams>
+	<spawns>
+      <spawn team="lime" kit="lkit">
+        <regions yaw="0">
+            <point>22.5, 32, -920.5</point>
+        </regions>
+      </spawn>
+      <spawn team="yellow" kit="ykit">
+        <regions yaw="180">
+            <point>22.5, 32, -817.5</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="-90">
+            <point>-49, 83, -861</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">iron sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28" amount="1">arrow</item>
+			<item slot="2" material="diamond pickaxe">
+				<enchantment level="2">durability</enchantment>
+				<enchantment level="2">dig speed</enchantment>
+			</item>	
+			<item slot="3" material="stone axe">
+				<enchantment level="3">durability</enchantment>
+			</item>
+			<item slot="4" amount="2">golden apple</item>
+			<item slot="5" amount="8">cooked beef</item>
+			<item slot="6" amount="32">stone</item>
+			<item slot="7" amount="32">glass</item>
+			<item slot="8" amount="64">log</item>
+		</kit>
+		<kit id="lkit" parents="both">
+			<helmet color="55FF55" damage="-3000">leather helmet</helmet>
+			<chestplate color="55FF55" damage="-3000">leather chestplate</chestplate>
+		    <leggings color="55FF55" damage="-3000">leather leggings</leggings>
+		    <boots color="55FF55" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="ykit" parents="both">
+			<helmet color="FFFF55" damage="-3000">leather helmet</helmet>
+			<chestplate color="FFFF55" damage="-3000">leather chestplate</chestplate>
+		    <leggings color="FFFF55" damage="-3000">leather leggings</leggings>
+		    <boots color="FFFF55" damage="-3000">leather boots</boots>
+		</kit>
+	</kits> 
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="lime" completion="100%">
+		<destroyable name="Left" region="lime-left" materials="obsidian"/>
+        <destroyable name="Right" region="lime-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="yellow" completion="100%">
+		<destroyable name="Left" region="yellow-left" materials="obsidian"/>
+        <destroyable name="Right" region="yellow-right" materials="obsidian"/>
+    </destroyables>
+	<regions>
+		<cuboid id="spawn-one" max="-51, oo, -821" min="-65, 0, -835"/>
+		<cylinder id="spawn-two" base="22, 31, -921" height="8" radius="9"/>
+		<cylinder id="spawn-three" base="22,31,-817" height="8" radius="9"/>
+
+		<union id="monuments">
+            <block id="lime-left">-9, 33, -957</block>
+			<block id="lime-right">53, 33, -957</block>
+            <block id="yellow-left">53, 33, -782</block>
+			<block id="yellow-right">-9, 33, -782</block>
+        </union>
+
+        <apply block="never" region="spawn-one" message="You may not modify blocks here!"/>
+        <apply block="never" region="spawn-two" message="You may not modify blocks here!"/>
+		<apply block="never" region="spawn-three" message="You may not modify blocks here!"/>
+
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>glass</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+		<item>cooked beef</item>
+		<item>golden apple</item>
+		<item>stone</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>iron sword</tool>
+		<tool>diamond pickaxe</tool>
+		<tool>stone axe</tool>
+	</toolrepair>
+</map>
