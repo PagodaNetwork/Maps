@@ -59,6 +59,7 @@
 		    <boots color="FFFF55" damage="-3000">leather boots</boots>
 		</kit>
 	</kits> 
+	<maxbuildheight>66</maxbuildheight>
 	<kill-rewards>
 		<kill-reward>
 			<item amount="1" material="golden apple"/>
