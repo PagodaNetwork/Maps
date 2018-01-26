@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<map proto="1.4.3">
+<name>Western Port</name>
+<version>1.0</version>
+<objective>Capture your wools and bring them back to your base</objective>
+<authors>
+	<author uuid="63b88dff-c6b4-4e08-bd17-aae089b12e95"/> 
+	<!-- Rilo -->
+	<author uuid="93d2f617-09da-4354-bc43-d0817c00c347"/>
+	<!-- Vior -->
+</authors>
+<teams>
+	<team id="purple" color="dark purple" max="15" max-overfill="20">Red Team</team>
+	<team id="orange" color="gold" max="15" max-overfill="20">Blue Team</team>
+</teams>
+<kits>
+    <kit id="both">
+        <item slot="0" material="stone sword"/>
+        <item slot="1" enchantment="arrow infinite" material="bow"/>
+        <item slot="28" material="arrow"/>
+        <item slot="2" enchantment="dig speed:3" material="iron pickaxe"/>
+        <item slot="3" amount="3" material="golden apple"/>
+        <item slot="4" amount="48" material="log"/>
+        <item slot="7" amount="64" material="cooked beef"/>
+        <item slot="8" enchantment="dig speed" material="iron axe"/>
+    </kit>
+    <kit id="pkit" parents="both">
+		<helmet color="AA00AA" material="leather helmet"/>
+        <chestplate color="AA00AA" material="leather chestplate"/>
+		<leggings material="iron leggings"/>
+		<boots color="AA00AA" material="leather boots"/>
+    </kit>
+    <kit id="okit" parents="both">
+        <helmet color="FFAA00" material="leather helmet"/>
+        <chestplate color="	FFAA00" material="leather chestplate"/>
+		<leggings material="iron leggings"/>
+		<boots color="FFAA00" material="leather boots"/>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="purple" kit="pkit">
+    	<region yaw="0">
+        	<point>35.5,44,-118.5</point>
+        </region>
+    </spawn>
+    <spawn team="orange" kit="okit">
+    	<region yaw="180">
+        	<point>35.5,44,115.5</point>
+        </region>
+    </spawn>
+    <default>
+    	<region>
+       		<point>101.5,86,-1.5</point>
+       	</region>
+    </default>
+</spawns>
+<wools team="purple">
+    <wool color="dark aqua" location="72,26,119">
+        <monument>
+        	<block>41,29,-87</block>
+        </monument>
+    </wool>
+    <wool color="magenta" location="-2,26,119">
+        <monument>
+        	<block>29,29,-87</block>
+        </monument>
+    </wool>
+</wools>
+<wools team="orange">
+    <wool color="yellow" location="-2, 26, -123">
+        <monument>
+        	<block>29, 29, 83</block>
+        </monument>
+    </wool>
+    <wool color="green" location="72, 26, -123">
+        <monument>
+        	<block>41, 29, 83</block>
+        </monument>
+    </wool>
+</wools>
+<filters>
+    <team id="only-purple">purple</team>
+    <team id="only-orange">orange</team>
+    <not id="no-void">
+        <void/>
+    </not>
+</filters>
+<regions>
+    <union id="purple-wools">
+        <cuboid min="64,17,109" max="78,52,121"/>
+        <cuboid min="8,17,109" max="6,52,121"/>
+    </union>
+    <union id="orange-wools">
+        <cuboid min="6,17,-113" max="-8,52,-125"/>
+        <cuboid min="78,17,-113" max="64,52,-125"/>
+    </union>
+	<union id="purple-spawn">
+		<cuboid min="42,17,-88" max="28,52,-113"/>
+        <cuboid min="28,52,-113" max="38,43,-122"/>
+    </union>
+	<union id="orange-spawn">
+		<cuboid min="28,17,84" max="42,52,109"/>
+        <cuboid min="42,52,109" max="32,43,118"/>
+    </union>
+    <!-- the map has block 36 to set the build areas -->
+    <apply block="no-void"/>
+    <apply block="never" enter="only-purple" region="purple-spawn"/>
+    <apply block="never" enter="only-yellow" region="orange-spawn"/>
+    <apply block="never" enter="only-purple" region="purple-wools"/>
+    <apply block="never" enter="only-orange" region="orange-wools"/>
+</regions>
+<kill-rewards>
+    <kill-reward>
+        <item amount="1" material="golden apple"/>
+    </kill-reward>
+</kill-rewards>
+<wools craftable="false">
+    <wool team="purple" color="purple" location="126,10,209" monument="purple-wool"/>
+    <wool team="purple" color="lime" location="126,10,213" monument="lime-wool"/>
+    <wool team="red" color="yellow" location="-80,10,209" monument="yellow-wool"/>
+    <wool team="red" color="orange" location="-80,10,213" monument="orange-wool"/>
+</wools>
+<toolrepair>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+    <tool>iron pickaxe</tool>
+    <tool>iron axe</tool>
+</toolrepair>
+<itemremove>
+    <item>leather helmet</item>
+	<item>leather chestplate</item>
+	<item>iron leggings</item>
+	<item>leather boots</item>
+    <item>cooked beef</item>
+    <item>golden apple</item>
+    <item>glass</item>
+    <item>wood</item>
+    <item>log</item>
+    <item>arrow</item>
+</itemremove>
+<maxbuildheight>60</maxbuildheight>
+</map>
