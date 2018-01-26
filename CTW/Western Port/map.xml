@@ -32,7 +32,7 @@
     </kit>
     <kit id="okit" parents="both">
         <helmet color="FFAA00" material="leather helmet"/>
-        <chestplate color="	FFAA00" material="leather chestplate"/>
+        <chestplate color="FFAA00" material="leather chestplate"/>
 		<leggings material="iron leggings"/>
 		<boots color="FFAA00" material="leather boots"/>
     </kit>
@@ -55,7 +55,7 @@
     </default>
 </spawns>
 <wools team="purple">
-    <wool color="dark aqua" location="72,26,119">
+    <wool color="cyan" location="72,26,119">
         <monument>
         	<block>41,29,-87</block>
         </monument>
