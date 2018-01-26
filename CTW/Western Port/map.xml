@@ -2,7 +2,7 @@
 <map proto="1.4.3">
 <name>Western Port</name>
 <version>1.0</version>
-<objective>Capture your wools and bring them back to your base</objective>
+<objective>Capture your wools and bring them back to your base.</objective>
 <authors>
 	<author uuid="63b88dff-c6b4-4e08-bd17-aae089b12e95"/> 
 	<!-- Rilo -->
@@ -10,8 +10,8 @@
 	<!-- Vior -->
 </authors>
 <teams>
-	<team id="purple" color="dark purple" max="15" max-overfill="20">Red Team</team>
-	<team id="orange" color="gold" max="15" max-overfill="20">Blue Team</team>
+	<team id="purple" color="dark purple" max="15" max-overfill="20">Purple Team</team>
+	<team id="orange" color="gold" max="15" max-overfill="20">Orange Team</team>
 </teams>
 <kits>
     <kit id="both">
@@ -103,11 +103,15 @@
         <cuboid min="42,52,109" max="32,43,118"/>
     </union>
     <!-- the map has block 36 to set the build areas -->
-    <apply block="no-void"/>
-    <apply block="never" enter="only-purple" region="purple-spawn"/>
-    <apply block="never" enter="only-orange" region="orange-spawn"/>
-    <apply block="never" enter="only-purple" region="purple-wools"/>
-    <apply block="never" enter="only-orange" region="orange-wools"/>
+    <apply block="no-void" message="You may not modify blocks in the void area!"/>
+    <apply block="never" region="purple-spawn" message="You may not modify blocks here!"/>
+    <apply block="never" region="orange-spawn" message="You may not modify blocks here!"/>
+    <apply enter="only-purple" region="purple-wools" message="You may not enter your own wool rooms!"/>
+    <apply enter="only-orange" region="orange-wools" message="You may not enter your own wool rooms!"/>
+	<apply block="never" region="purple-wools" message="You may not modify blocks here!"/>
+    <apply block="never" region="orange-wools" message="You may not modify blocks here!"/>
+	<apply enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
+    <apply enter="only-orange" region="orange-spawn" message="You may not enter the enemy spawn!"/>
 </regions>
 <kill-rewards>
     <kill-reward>
