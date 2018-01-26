@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+<name>Cake</name>
+<version>1.0.0</version>
+<objective>Capture the enemy wools to win the game!</objective>
+<gamemode>ctw</gamemode>
+<authors>
+    <author uuid="ae5c1e91-745b-4a6f-a337-11484ede6957"/> <!-- Clijmart -->
+    <author uuid="50a34639-abb3-4cf1-b182-204756c49f49"/> <!-- Sam the gay -->
+    <author uuid="3ec3ad7c-563c-45fb-aedf-dd32066a2e19"/> <!-- my love mepii -->
+</authors>
+<teams>
+   <team id="yellow" color="yellow" min="1" max="24" max-overfill="70">Yellow</team>
+   <team id="blue" color="blue" min="1" max="24" max-overfill="70">Blue</team>
+</teams>
+<spawns>
+    <spawn team="yellow" kit="ykit">
+        <regions yaw="-180">
+            <point>0.5,49,151.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="bkit">
+        <regions yaw="0">
+            <point>0.5,49,-150</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-90">
+            <cuboid min="-71,45,-1" max="-74,47,2"/>
+        </regions>
+    </default>
+</spawns>
+<wools team="yellow">
+    <wool color="light blue" location="-3,14,-149">
+        <monument>
+        	<block>-3,12,132</block>
+        </monument>
+    </wool>
+    <wool color="blue" location="3,14,-148">
+        <monument>
+        	<block>3,12,132</block>
+        </monument>
+    </wool>
+</wools>
+<wools team="blue">
+    <wool color="orange" location="3,14,149">
+        <monument>
+        	<block>3,12,-132</block>
+        </monument>
+    </wool>
+    <wool color="yellow" location="-3,14,148">
+        <monument>
+        	<block>-3,12,-132</block>
+        </monument>
+    </wool>
+</wools>
+<kits>
+    <kit id="def" force="true">
+        <potion duration="4" amplifier="5">damage resistance</potion>
+        <item slot="0" material="iron sword"/>
+        <item slot="1" material="bow"/>
+        <item slot="2" material="diamond pickaxe"/>
+        <item slot="3" material="iron axe"/>
+        <item slot="5" amount="32" material="sandstone"/>
+        <item slot="6" amount="16" material="log"/>
+        <item slot="8" amount="24" material="cooked fish"/>
+        <item slot="7" amount="2" material="golden apple"/>
+        <item slot="28" amount="32" material="arrow"/>
+    </kit>
+    <kit id="ykit" parents="def">
+        <helmet color="E5E533" material="leather helmet"/>
+        <chestplate color="E5E533" material="leather chestplate"/>
+        <leggings color="E5E533" material="leather leggings"/>
+        <boots color="E5E533" material="leather boots"/>
+        <item slot="5" amount="64" damage="4" material="stained glass"/>
+    </kit>
+    <kit id="bkit" parents="def">
+        <helmet color="334CB2" material="leather helmet"/>
+        <chestplate color="334CB2" material="leather chestplate"/>
+        <leggings color="334CB2" material="leather leggings"/>
+        <boots color="334CB2" material="leather boots"/>
+        <item slot="5" amount="64" damage="11" material="stained glass"/>
+    </kit>
+    <kit id="k-r">
+        <item material="golden apple"/>
+    </kit>
+</kits>
+<filters>
+    <team id="only-yellow">yellow</team>
+    <team id="only-blue">blue</team>
+    <not id="no-void">
+        <void/>
+    </not>
+</filters>
+<regions>
+    <union id="yellow-wools">
+        <rectangle min="14,143" max="3,154"/>
+        <rectangle min="-13,143" max="-1,155"/>
+    </union>
+    <union id="blue-wools">
+        <rectangle min="-13,-154" max="-2,-142"/>
+        <rectangle min="14,-142" max="2,-153"/>
+    </union>
+    <union id="yellow-spawn-zone">
+        <rectangle min="-10,119" max="11,143"/>
+        <rectangle min="3,143" max="-2,154"/>
+    </union>
+    <union id="blue-spawn-zone">
+        <rectangle min="11,-118" max="-10,-142"/>
+        <rectangle min="-2,-142" max="3,-153"/>
+    </union>
+    <!-- the map have blocks 36 to set the build areas -->
+    <apply block="no-void"/>
+    <apply block="never" enter="only-yellow" region="yellow-spawn-zone"/> <!-- spawn yellow -->
+    <apply block="never" enter="only-yellow" region="blue-spawn-zone"/> <!-- spawn yellow -->
+    <apply block="never" enter="only-blue" region="yellow-wools"/>
+    <apply block="never" enter="only-yellow" region="blue-wools"/>
+</regions>
+<maxbuildheight>31</maxbuildheight>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+    <tool>diamond pickaxe</tool>
+    <tool>iron axe</tool>
+    <tool>leather helmet</tool>
+    <tool>leather chestplate</tool>
+    <tool>leather leggings</tool>
+    <tool>leather boots</tool>
+</toolrepair>
+<itemremove>
+    <item>log</item>
+    <item>stained glass:11</item>
+    <item>stained glass:4</item>
+</itemremove>
+</map>
