@@ -17,7 +17,7 @@
     </teams>
     <respawn delay="5s" auto="true" blackout="true"/>
     <kits>
-        <kit name="spawn" force="true">
+        <kit id="spawn" force="true">
             <potion duration="5" amplifier="1">heal</potion>
             <potion duration="5" amplifier="5">slowness</potion>
             <potion duration="5" amplifier="-5">jump</potion>
@@ -33,15 +33,15 @@
             <chestplate unbreakable="true">chainmail chestplate</chestplate>
             <leggings unbreakable="true">chainmail leggings</leggings>
         </kit>
-        <kit name="red" parents="spawn">
+        <kit id="red" parents="spawn">
             <helmet color="cd0000" unbreakable="true">leather helmet</helmet>
             <boots color="cd0000" unbreakable="true">leather boots</boots>
         </kit>
-        <kit name="blue" parents="spawn">
+        <kit id="blue" parents="spawn">
             <helmet color="0066cc" unbreakable="true">leather helmet</helmet>
             <boots color="0066cc" unbreakable="true">leather boots</boots>
         </kit>
-        <kit name="obs">
+        <kit id="obs">
             <potion duration="oo">night vision</potion>
         </kit>
     </kits>
@@ -120,42 +120,42 @@
 <regions>
     <!-- spawn deny blocks -->
     <apply block="deny-all" message="You may not break or place blocks in the spawn!">
-        <cuboid name="red-storage-room" min="167,0,33" max="160,11,41"/>
-        <cuboid name="blue-storage-room" min="167,0,151" max="160,11,143"/>
+        <cuboid id="red-storage-room" min="167,0,33" max="160,11,41"/>
+        <cuboid id="blue-storage-room" min="167,0,151" max="160,11,143"/>
     </apply>
     <!-- abajo de las lanas -->
     <apply block="deny-all" message="You may not break or place blocks here!">
-        <cuboid name="greenwoolroom" min="161,15,144" max="168,20,151"/>
-        <cuboid name="cyanwoolroom" min="168,15,41" max="161,20,34"/>
+        <cuboid id="greenwoolroom" min="161,15,144" max="168,20,151"/>
+        <cuboid id="cyanwoolroom" min="168,15,41" max="161,20,34"/>
     </apply>
 
     <!-- spawn protection -->
     <apply enter="only-blue" message="You may not enter the enemy team's spawn!">
-        <cuboid name="blue-storage-room" min="167,0,151" max="160,11,143"/>
+        <cuboid id="blue-storage-room" min="167,0,151" max="160,11,143"/>
     </apply>
     <apply enter="only-red" message="You may not enter the enemy team's spawn!">
-        <cuboid name="red-spawn-room" min="167,0,33" max="160,11,41"/>    
+        <cuboid id="red-spawn-room" min="167,0,33" max="160,11,41"/>    
     </apply>
     <!-- void -->
     <apply block="no-void" message="You may not build in the void">
         <negative>
-            <rectangle name="map" min="146,16" max="186,169"/>
+            <rectangle id="map" min="146,16" max="186,169"/>
         </negative>
     </apply>
     <!-- wools -->
-    <cuboid name="greenroom" min="161,27,144" max="168,20,151"/>
-    <cuboid name="cyanroom" min="168,27,41" max="161,20,34"/>
+    <cuboid id="greenroom" min="161,27,144" max="168,20,151"/>
+    <cuboid id="cyanroom" min="168,27,41" max="161,20,34"/>
     <apply block="only-red" enter="only-red" region="greenroom" message="You may not enter your own wool room!"/>
     <apply block="only-blue" enter="only-blue" region="cyanroom" message="You may not enter your own wool room!"/>
 </regions>
 <filters>
-    <filter name="only-blue">
+    <filter id="only-blue">
         <team>blue-team</team>
     </filter>
-    <filter name="only-red">
+    <filter id="only-red">
         <team>red-team</team>
     </filter>
-    <filter name="no-void">
+    <filter id="no-void">
         <deny>
             <void/>
         </deny>
