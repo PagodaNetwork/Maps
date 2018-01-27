@@ -149,11 +149,9 @@
     <apply block="only-blue" enter="only-blue" region="cyanroom" message="You may not enter your own wool room!"/>
 </regions>
 <filters>
-    <filter id="only-blue">
-        <team>blue-team</team>
-    </filter>
-    <filter id="only-red">
-        <team>red-team</team>
+	<filter>
+		<team id="only-blue">blue-team</team>
+		<team id="only-red">red-team</team>
     </filter>
     <filter id="no-void">
         <deny>
