@@ -85,7 +85,6 @@
 
         <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
         <apply block="never" region="yellow-spawn" message="You may not modify blocks here!"/>
-		<apply block="never" region="nobuild-one" message="You may not modify blocks here!"/>
 		<apply enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
         <apply enter="only-yellow" region="yellow-spawn" message="You may not enter the enemy spawn!"/>
 
