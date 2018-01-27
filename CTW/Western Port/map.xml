@@ -86,33 +86,33 @@
     </not>
 </filters>
 <regions>
-	<negative id="void">
-		<union id="purple-wools">
-			<cuboid min="64,17,109" max="78,52,121"/>
-			<cuboid min="8,17,109" max="6,52,121"/>
-		</union>
-		<union id="orange-wools">
-			<cuboid min="6,17,-113" max="-8,52,-125"/>
-			<cuboid min="78,17,-113" max="64,52,-125"/>
-		</union>
-		<union id="purple-spawn">
-			<cuboid min="42,17,-88" max="28,52,-113"/>
-			<cuboid min="28,52,-113" max="38,43,-122"/>
-		</union>
-		<union id="orange-spawn">
-			<cuboid min="28,17,84" max="42,52,109"/>
-			<cuboid min="42,52,109" max="32,43,118"/>
-		</union>
-	</negative>
+    <negative id="void">
+        <union id="purple-wools">
+            <cuboid min="64,17,109" max="78,52,121"/>
+            <cuboid min="8,17,109" max="6,52,121"/>
+        </union>
+        <union id="orange-wools">
+            <cuboid min="6,17,-113" max="-8,52,-125"/>
+            <cuboid min="78,17,-113" max="64,52,-125"/>
+        </union>
+        <union id="purple-spawn">
+            <cuboid min="42,17,-88" max="28,52,-113"/>
+            <cuboid min="28,52,-113" max="38,43,-122"/>
+        </union>
+        <union id="orange-spawn">
+            <cuboid min="28,17,84" max="42,52,109"/>
+            <cuboid min="42,52,109" max="32,43,118"/>
+        </union>
+    </negative>
     <!-- the map has block 36 to set the build areas -->
-    <apply block="no-void" message="You may not modify blocks in the void area!"/>
+    <apply block="no-void" region="void" message="You may not modify blocks in the void area!"/>
     <apply block="never" region="purple-spawn" message="You may not modify blocks here!"/>
     <apply block="never" region="orange-spawn" message="You may not modify blocks here!"/>
     <apply enter="only-purple" region="purple-wools" message="You may not enter your own wool rooms!"/>
     <apply enter="only-orange" region="orange-wools" message="You may not enter your own wool rooms!"/>
-	<apply block="never" region="purple-wools" message="You may not modify blocks here!"/>
+    <apply block="never" region="purple-wools" message="You may not modify blocks here!"/>
     <apply block="never" region="orange-wools" message="You may not modify blocks here!"/>
-	<apply enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
+    <apply enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
     <apply enter="only-orange" region="orange-spawn" message="You may not enter the enemy spawn!"/>
 </regions>
 <kill-rewards>
