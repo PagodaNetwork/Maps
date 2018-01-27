@@ -73,8 +73,8 @@
             <rectangle min="-72,20" max="-99,27"/>
             <rectangle min="-47,29" max="-38,16"/>
         </union>
-        <cuboid id="lightblueroom" min="-89,-6" max="-102,-19"/>
-        <cuboid id="pinkroom" min="68,1" max="81,14"/>
+        <rectangle id="lightblueroom" min="-89,-6" max="-102,-19"/>
+        <rectangle id="pinkroom" min="68,1" max="81,14"/>
         <apply block="always" region="void-gaps"/>
         <apply block="no-void" message="You may not place blocks in the void area!"/>
         <apply block="only-red" enter="only-red" region="lightblueroom" message="You may not enter your own wool room!"/>
