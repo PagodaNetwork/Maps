@@ -75,7 +75,6 @@
 	<regions>
 		<cylinder id="red-spawn" base="-2, 82, 11" height="7" radius="10"/>
 		<cylinder id="yellow-spawn" base="-2, 82, -107" height="7" radius="10"/>
-		<cuboid id="nobuild-one" max="33, 142, -142" min="-37, 76, 47"/>
 
 		<union id="monuments">
             <block id="red-left">24, 89, 40</block>
