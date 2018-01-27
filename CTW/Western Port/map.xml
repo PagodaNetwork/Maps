@@ -36,6 +36,9 @@
 		<leggings material="iron leggings"/>
 		<boots color="FFAA00" material="leather boots"/>
     </kit>
+	<kit id="spawn-resistance">
+        <potion duration="8" amplifier="5">damage resistance</potion>
+    </kit>
 </kits>
 <spawns>
     <spawn team="purple" kit="pkit">
@@ -86,6 +89,10 @@
     </not>
 </filters>
 <regions>
+    <union id="spawn-falls">
+        <cuboid max="36,43,103" min="34,22,105"/>
+        <cuboid max="34,43,-107" min="36,22,-109"/>
+    </union>
     <negative id="void">
         <union id="purple-wools">
             <cuboid min="64,17,109" max="78,52,121"/>
@@ -114,6 +121,7 @@
     <apply block="never" region="orange-wools" message="You may not modify blocks here!"/>
     <apply enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
     <apply enter="only-orange" region="orange-spawn" message="You may not enter the enemy spawn!"/>
+	<apply kit="spawn-resistance" region="spawn-falls"/>
 </regions>
 <kill-rewards>
     <kill-reward>
