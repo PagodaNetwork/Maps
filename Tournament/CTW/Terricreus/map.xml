@@ -138,8 +138,8 @@
         </negative>
     </apply>
     <apply block="deny-all" message="You may not place blocks in this zone!">
-        <rectangle name="arrow" min="181,13,91" max="183,12,93"/>
-        <rectangle name="apples" min="166,3,92" max="166,3,92"/>
+        <cuboid name="arrow" min="181,13,91" max="183,12,93"/>
+        <cuboid name="apples" min="166,3,92" max="166,3,92"/>
     </apply>
     <!-- wools -->
     <union name="blue-wool-rooms">
@@ -155,7 +155,7 @@
     </apply>
 
     <union name="red-wool-rooms">    
-        <rectangle name="blue-room" min="161,21,144" max="168,28,151"/>
+        <cuboid name="blue-room" min="161,21,144" max="168,28,151"/>
     </union>
 
     <apply block="only-red" use="only-red-usage">
