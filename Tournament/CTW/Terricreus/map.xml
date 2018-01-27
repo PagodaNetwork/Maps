@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<map proto="1.4.2">
+<map proto="1.4.0">
     <name>Terricreus</name>
     <version>1.1.0</version>
     <objective>Bring the opposing team's wool back to your team's spawn.</objective>
@@ -17,7 +17,7 @@
     </teams>
     <respawn delay="5s" auto="true" blackout="true"/>
     <kits>
-        <kit id="spawn" force="true">
+        <kit name="spawn" force="true">
             <potion duration="5" amplifier="1">heal</potion>
             <potion duration="5" amplifier="5">slowness</potion>
             <potion duration="5" amplifier="-5">jump</potion>
@@ -33,15 +33,15 @@
             <chestplate unbreakable="true">chainmail chestplate</chestplate>
             <leggings unbreakable="true">chainmail leggings</leggings>
         </kit>
-        <kit id="red" parents="spawn">
+        <kit name="red" parents="spawn">
             <helmet color="cd0000" unbreakable="true">leather helmet</helmet>
             <boots color="cd0000" unbreakable="true">leather boots</boots>
         </kit>
-        <kit id="blue" parents="spawn">
+        <kit name="blue" parents="spawn">
             <helmet color="0066cc" unbreakable="true">leather helmet</helmet>
             <boots color="0066cc" unbreakable="true">leather boots</boots>
         </kit>
-        <kit id="obs">
+        <kit name="obs">
             <potion duration="oo">night vision</potion>
         </kit>
     </kits>
@@ -73,11 +73,11 @@
     </itemremove>
     <maxbuildheight>28</maxbuildheight>
     <spawns>
-        <default kit="obs">
-        <regions yaw="0">
-            <cylinder base="166.5,5,92.5" radius="5" height="2"/>
-        </regions>
-    </default>
+        <default>
+            <regions yaw="0" kit="obs">
+                <cuboid min="166.5,5,92.5" max="166.5,5,92.5"/>
+            </regions>
+        </default>
         <spawn team="red-team" kit="red">
             <regions yaw="-180">
                 <block>163.5,5,37.5</block>
@@ -92,12 +92,12 @@
     <wools>
         <wool team="red-team" color="green" location="164,20,147">
             <monument>
-                <block>163,6,39</block>
+                <block>161,6,37</block>
             </monument>
         </wool>
         <wool team="blue-team" color="cyan" location="164,20,37">
             <monument>
-                <block>163,6,145</block>
+                <block>161,6,147</block>
             </monument>
         </wool>
     </wools>
@@ -120,43 +120,95 @@
 <regions>
     <!-- spawn deny blocks -->
     <apply block="deny-all" message="You may not break or place blocks in the spawn!">
-        <cuboid id="red-storage-room" min="167,0,33" max="160,11,41"/>
-        <cuboid id="blue-storage-room" min="167,0,151" max="160,11,143"/>
-    </apply>
-    <!-- abajo de las lanas -->
-    <apply block="deny-all" message="You may not break or place blocks here!">
-        <cuboid id="greenwoolroom" min="161,15,144" max="168,20,151"/>
-        <cuboid id="cyanwoolroom" min="168,15,41" max="161,20,34"/>
+        <cuboid name="red-storage-room" min="167,0,33" max="160,11,41"/>
+        <cuboid name="blue-storage-room" min="167,0,151" max="160,11,143"/>
     </apply>
 
     <!-- spawn protection -->
     <apply enter="only-blue" message="You may not enter the enemy team's spawn!">
-        <cuboid id="blue-storage-room" min="167,0,151" max="160,11,143"/>
+        <cuboid name="blue-storage-room" min="167,0,151" max="160,11,143"/>
     </apply>
     <apply enter="only-red" message="You may not enter the enemy team's spawn!">
-        <cuboid id="red-spawn-room" min="167,0,33" max="160,11,41"/>    
+        <cuboid name="red-spawn-room" min="167,0,33" max="160,11,41"/>    
     </apply>
     <!-- void -->
     <apply block="no-void" message="You may not build in the void">
         <negative>
-            <rectangle id="map" min="146,16" max="186,169"/>
+            <rectangle name="map" min="146,16" max="186,169"/>
         </negative>
     </apply>
+    <apply block="deny-all" message="You may not place blocks in this zone!">
+        <rectangle name="arrow" min="181,13,91" max="183,12,93"/>
+        <rectangle name="apples" min="166,3,92" max="166,3,92"/>
+    </apply>
     <!-- wools -->
-    <cuboid id="greenroom" min="161,27,144" max="168,20,151"/>
-    <cuboid id="cyanroom" min="168,27,41" max="161,20,34"/>
-    <apply block="only-red" enter="only-red" region="greenroom" message="You may not enter your own wool room!"/>
-    <apply block="only-blue" enter="only-blue" region="cyanroom" message="You may not enter your own wool room!"/>
+    <union name="blue-wool-rooms">
+        <rectangle name="red-room" min="161,21,41" max="168,28,34"/>
+    </union>
+
+    <apply block="only-blue" use="only-blue-usage">
+        <region name="blue-wool-rooms"/>
+    </apply>
+
+    <apply enter="only-blue" message="You may not enter your own wool room!">
+        <region name="blue-wool-rooms"/>
+    </apply>
+
+    <union name="red-wool-rooms">    
+        <rectangle name="blue-room" min="161,21,144" max="168,28,151"/>
+    </union>
+
+    <apply block="only-red" use="only-red-usage">
+        <region name="red-wool-rooms"/>
+    </apply>
+
+    <apply enter="only-red" message="You may not enter your own wool room!">
+        <region name="red-wool-rooms"/>
+    </apply>
+
 </regions>
 <filters>
-	<filter>
-		<team id="only-blue">blue-team</team>
-		<team id="only-red">red-team</team>
+    <filter name="only-blue">
+        <team>blue-team</team>
     </filter>
-    <filter id="no-void">
+    <filter name="only-red">
+        <team>red-team</team>
+    </filter>
+    <filter name="only-blue-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>blue-team</team>
+            </all>
+        </not>
+    </filter>
+    <filter name="only-red-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>red-team</team>
+            </all>
+        </not>
+    </filter>
+    <filter name="no-void">
         <deny>
             <void/>
         </deny>
     </filter>
 </filters>
+
+
+
+
+
+
+
 </map>
