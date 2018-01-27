@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.4.2">
+	<name>Justice</name>
+	<version>1.0</version>
+	<objective>Destroy the enemy's monument(s) to win!</objective>
+	<authors>
+		<author uuid="da98a2f1-673c-4cec-b547-e0a342abfde4"/>
+		<!-- timausTestified -->
+		<author uuid="ec00f0bb-1c45-4876-8f11-2b033b35c7e2"/>
+		<!-- Arigenn -->
+	</authors>
+	<teams>
+		<team id="red" color="dark red" max="20">Red Team</team>
+		<team id="yellow" color="yellow" max="20">Yellow Team</team>
+	</teams>
+	<spawns>
+      <spawn team="red" kit="rkit">
+        <regions yaw="180">
+            <point>-2, 84, 11</point>
+        </regions>
+      </spawn>
+      <spawn team="yellow" kit="ykit">
+        <regions yaw="0">
+            <point>-2, 84, -107</point>
+        </regions>
+      </spawn>
+      <default>
+        <regions yaw="90">
+            <point>-86, 155, -48</point>
+        </regions>
+      </default>
+    </spawns>
+	<kits>
+		<kit id="both">
+			<item slot="0">stone sword</item>
+			<item slot="1" enchantment="arrow infinite">bow</item>
+			<item slot="28" amount="1">arrow</item>
+			<item slot="2">diamond pickaxe</item>
+			<item slot="3" amount="3">golden apple</item>
+			<item slot="4" amount="32">glass</item>
+			<item slot="5" amount="64">log</item>
+			<item slot="6" amount="32">smooth brick</item>
+			<item slot="7" amount="24">apple</item>
+		</kit>
+		<kit id="rkit" parents="both">
+			<helmet color="AA0000" damage="-3000">leather helmet</helmet>
+			<chestplate color="AA0000" damage="-3000">leather chestplate</chestplate>
+			<leggings color="AA0000" damage="-3000">leather leggings</leggings>
+			<boots color="AA0000" damage="-3000">leather boots</boots>
+		</kit>
+		<kit id="ykit" parents="both">
+			<helmet color="FFFF55" damage="-3000">leather helmet</helmet>
+			<chestplate color="FFFF55" damage="-3000">leather chestplate</chestplate>
+			<leggings color="FFFF55" damage="-3000">leather leggings</leggings>
+			<boots color="FFFF55" damage="-3000">leather boots</boots>
+		</kit>
+	</kits>
+	<kill-rewards>
+		<kill-reward>
+			<item amount="1" material="golden apple"/>
+		</kill-reward>
+	</kill-rewards>
+    <destroyables owner="red" completion="100%">
+		<destroyable name="Left" region="red-left" materials="obsidian"/>
+        <destroyable name="Right" region="red-right" materials="obsidian"/>
+    </destroyables>
+    <destroyables owner="yellow" completion="100%">
+		<destroyable name="Left" region="yellow-left" materials="obsidian"/>
+        <destroyable name="Right" region="yellow-right" materials="obsidian"/>
+    </destroyables>
+	<filters>
+		<team id="only-red">red</team>
+		<team id="only-yellow">yellow</team>
+	</filters>
+	<regions>
+		<cylinder id="red-spawn" base="-2, 82, 11" height="7" radius="10"/>
+		<cylinder id="yellow-spawn" base="-2, 82, -107" height="7" radius="10"/>
+		<cuboid id="nobuild-one" max="33, 142, -142" min="-37, 76, 47"/>
+
+		<union id="monuments">
+            <block id="red-left">24, 89, 40</block>
+			<block id="red-right">-28, 89, 40</block>
+            <block id="yellow-left">-28, 89, -136</block>
+			<block id="yellow-right">24, 89, -136</block>
+        </union>
+
+        <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+        <apply block="never" region="yellow-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="nobuild-one" message="You may not modify blocks here!"/>
+		<apply enter="red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+        <apply enter="yellow" region="yellow-spawn" message="You may not enter the enemy spawn!"/>
+
+	</regions>
+	<itemremove>
+		<item>leather helmet</item>
+		<item>leather chestplate</item>
+		<item>leather leggings</item>
+		<item>leather boots</item>
+		<item>glass</item>
+		<item>apple</item>
+		<item>arrow</item>
+		<item>log</item>
+		<item>wood</item>
+		<item>obsidian</item>
+		<item>golden apple</item>
+	</itemremove>
+	<toolrepair>
+		<tool>bow</tool>
+		<tool>stone sword</tool>
+		<tool>diamond pickaxe</tool>
+		<tool>leather helmet</tool>
+		<tool>leather chestplate</tool>
+		<tool>leather leggings</tool>
+		<tool>leather boots</tool>
+	</toolrepair>
+</map>
