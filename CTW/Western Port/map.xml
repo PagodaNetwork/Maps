@@ -52,7 +52,7 @@
         </region>
     </spawn>
     <default>
-    	<region yaw="0">
+    	<region yaw="90">
        		<point>101.5,86,-1.5</point>
        	</region>
     </default>
