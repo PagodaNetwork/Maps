@@ -128,5 +128,5 @@
 		<item>wool</item>
 	</itemremove>
 	<maxbuildheight>36</maxbuildheight>
-	<respawn delay="5s" freeze="5s"/>
+	<respawn delay="3s" freeze="3s"/>
 </map>
