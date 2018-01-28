@@ -82,8 +82,10 @@
             <block id="purple-left">-13,74,-861</block>
         </union>
 
-        <apply block="never" enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
-        <apply block="never" enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
+        <apply enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+        <apply enter="only-purple" region="purple-spawn" message="You may not enter the enemy spawn!"/>
+		<apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+		<apply block="never" region="purple-spawn" message="You may not modify blocks here!"/>
 
         <apply enter="only-red" region="red-spawn"/>
         <apply enter="only-purple" region="purple-spawn"/>

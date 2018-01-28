@@ -4,8 +4,8 @@
 	<version>1.1.0</version>
 	<objective>Destroy all three of the enemy's monuments to win!</objective>
 	<authors>
-		<author uuid="3893a242-cc17-447e-9b1c-774fc8941af8"/>
-		<!-- G Skippy -->
+		<author uuid="da98a2f1-673c-4cec-b547-e0a342abfde4"/>
+		<!-- Evocal -->
 	</authors>
 	<teams>
 		<team id="moon" color="dark aqua" max="25">Moon</team>
@@ -14,12 +14,12 @@
 	<spawns>
       <spawn team="moon" kit="mkit">
         <regions yaw="0">
-            <point>0, 8, -260</point>
+            <point>0, 9, -260</point>
         </regions>
       </spawn>
       <spawn team="sun" kit="skit">
         <regions yaw="180">
-            <point>0, 8, 7</point>
+            <point>0, 9, 7</point>
         </regions>
       </spawn>
       <default>
@@ -110,7 +110,6 @@
 		<item>log</item>
 		<item>wood</item>
 		<item>obsidian</item>
-		<item>golden carrot</item>
 		<item>golden apple</item>
 	</itemremove>
 	<toolrepair>
