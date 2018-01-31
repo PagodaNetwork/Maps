@@ -1,4 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <map>
+    <!-- Included by all PGM servers -->
+    <damage>
+        <!-- Disable firework damage -->
+        <deny>
+            <damager>
+                <entity>Firework</entity>
+            </damager>
+        </deny>
+    </damage>
+    <mutations chance="0.01" amount="2" />
+    <spawns>
+        <player-kit>
+            <hitbox width="0.75" />
+            <attribute operation="multiply" amount="4.001">generic.attackSpeed</attribute>
+            <!-- exactly 4 causes rounding errors -->
+            <attribute amount="-1">sportbukkit.arrowAccuracy</attribute>
+            <attribute amount="-1">sportbukkit.arrowVelocityTransfer</attribute>
+        </player-kit>
+    </spawns>
     <item-mods>
         <rule>
             <match>
