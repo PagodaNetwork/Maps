@@ -43,7 +43,7 @@
         </region>
     </spawn>
     <default>
-    	<region>
+        <region yaw="-180">
        		<cuboid min="-9,25.5,302" max="-5,23.5,298"/>
        	</region>
     </default>
