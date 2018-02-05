@@ -168,24 +168,16 @@
 
 </regions>
 <filters>
-    <filter name="only-blue">
-        <team>blue-team</team>
-    </filter>
-    <filter name="only-red">
-        <team>red-team</team>
-    </filter>
-    <filter name="only-blue-usage">
-        <not>
-            <all>
-                <any>
-                    <block>chest</block>
-                    <block>workbench</block>
-                    <block>trap door</block>
-                </any>
-                <team>blue-team</team>
-            </all>
-        </not>
-    </filter>
+	<team id="only-blue">blue-team</team>
+	<team id="only-red">red-team</team>
+	<not id="only-blue-usage">
+		<any>
+			<block>chest</block>
+			<block>workbench</block>
+			<block>trap door</block>
+		</any>
+		<team>blue-team</team>
+	</not>
     <filter name="only-red-usage">
         <not>
             <all>
