@@ -23,7 +23,7 @@
         </regions>
       </spawn>
       <default>
-        <regions yaw="-90">
+        <regions yaw="0">
             <point>-16, 68, -737</point>
         </regions>
       </default>
