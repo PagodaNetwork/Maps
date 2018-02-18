@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<map proto="1.4.3">
+<name>Oxford Empire</name>
+<version>1.0</version>
+<objective>Capture the enemy wools to win the game!</objective>
+<authors>
+	<author uuid="b8ee2537-14ff-484d-ae1d-8146fcfa8fe1"/> 
+	<!-- Xtra -->
+	<author uuid="2df2bef6-6f50-4e4e-a891-048990bf1f5c"/>
+	<!-- Blaz -->
+</authors>
+<teams>
+	<team id="blue" color="blue" max="15" max-overfill="15">Blue Team</team>
+	<team id="red" color="dark red" max="15" max-overfill="15">Red Team</team>
+</teams>
+<kits>
+    <kit id="both">
+        <item slot="0" material="stone sword"/>
+        <item slot="1" enchantment="arrow infinite" material="bow"/>
+        <item slot="28" material="arrow"/>
+        <item slot="2" enchantment="dig speed:1" material="diamond pickaxe"/>
+        <item slot="3" amount="3" material="golden apple"/>
+        <item slot="4" amount="48" material="log"/>
+		<item slot="7" amount="32" material="glass"/>
+        <item slot="8" amount="32" material="cooked beef"/>
+    </kit>
+    <kit id="rkit" parents="both">
+		<helmet color="AA00AA" material="leather helmet"/>
+        <chestplate color="AA00AA" material="leather chestplate"/>
+		<leggings material="iron leggings"/>
+		<boots color="AA00AA" material="leather boots"/>
+    </kit>
+    <kit id="bkit" parents="both">
+        <helmet color="5555FF" material="leather helmet"/>
+        <chestplate color="5555FF" material="leather chestplate"/>
+		<leggings material="iron leggings"/>
+		<boots color="5555FF" material="leather boots"/>
+    </kit>
+	<kit id="spawn-resistance">
+        <potion duration="5" amplifier="5">damage resistance</potion>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="red" kit="rkit">
+    	<region yaw="0">
+        	<point>-60.5,72,95.5</point>
+        </region>
+    </spawn>
+    <spawn team="blue" kit="bkit">
+    	<region yaw="-180">
+        	<point>-60.5,72,225.5</point>
+        </region>
+    </spawn>
+    <default>
+    	<region yaw="-90">
+       		<point>-99.5,62,161.5</point>
+       	</region>
+    </default>
+</spawns>
+<wools team="blue">
+    <wool color="yellow" location="-23,46,219">
+        <monument>
+        	<block>-58,40,91</block>
+        </monument>
+    </wool>
+    <wool color="orange" location="-99,46,219">
+        <monument>
+        	<block>-64,40,91</block>
+        </monument>
+    </wool>
+</wools>
+<wools team="red">
+    <wool color="green" location="-99,46,101">
+        <monument>
+        	<block>-64,40,229</block>
+        </monument>
+    </wool>
+    <wool color="purple" location="-23,46,101">
+        <monument>
+        	<block>-58,40,229</block>
+        </monument>
+    </wool>
+</wools>
+<filters>
+    <team id="only-red">red</team>
+    <team id="only-blue">blue</team>
+    <not id="no-void">
+        <void/>
+    </not>
+</filters>
+<regions>
+    <union id="spawn-falls">
+        <cuboid max="-61,73,95" min="-61,47,95"/>
+        <cuboid max="-61,74,225" min="-61,47,225"/>
+    </union>
+    <negative id="void">
+        <union id="blue-wools">
+            <cuboid min="-95,53,215" max="-103,39,223"/>
+            <cuboid min="-19,53,223" max="-27,39,215"/>
+        </union>
+        <union id="red-wools">
+            <cuboid min="-19,39,97" max="-27,53,105"/>
+            <cuboid min="-95,39,105" max="-103,53,97"/>
+        </union>
+        <union id="blue-spawn">
+            <cuboid min="-51,39,218" max="-71,47,232"/>
+        </union>
+        <union id="red-spawn">
+            <cuboid min="-71,39,102" max="-51,47,88"/>
+        </union>
+    </negative>
+    <!-- the map has block 36 to set the build areas -->
+    <apply block="no-void" region="void" message="You may not modify blocks in the void area!"/>
+    <apply block="never" region="blue-spawn" message="You may not modify blocks here!"/>
+    <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
+    <apply enter="only-blue" region="blue-wools" message="You may not enter your own wool rooms!"/>
+    <apply enter="only-red" region="red-wools" message="You may not enter your own wool rooms!"/>
+    <apply block="never" region="red-wools" message="You may not modify blocks here!"/>
+    <apply block="never" region="blue-wools" message="You may not modify blocks here!"/>
+    <apply enter="only-blue" region="blue-spawn" message="You may not enter the enemy spawn!"/>
+    <apply enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+	<apply kit="spawn-resistance" region="spawn-falls"/>
+</regions>
+<kill-rewards>
+    <kill-reward>
+        <item amount="1" material="golden apple"/>
+    </kill-reward>
+</kill-rewards>
+<toolrepair>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+    <tool>diamond pickaxe</tool>
+</toolrepair>
+<itemremove>
+    <item>leather helmet</item>
+	<item>leather chestplate</item>
+	<item>iron leggings</item>
+	<item>leather boots</item>
+    <item>cooked beef</item>
+    <item>golden apple</item>
+    <item>glass</item>
+    <item>wood</item>
+    <item>log</item>
+    <item>arrow</item>
+</itemremove>
+<maxbuildheight>53</maxbuildheight>
+</map>
