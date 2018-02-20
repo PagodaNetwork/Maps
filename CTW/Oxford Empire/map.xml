@@ -23,7 +23,7 @@
         <item slot="4" amount="48" material="log"/>
 		<item slot="7" amount="32" material="glass"/>
         <item slot="8" amount="32" material="cooked beef"/>
-        
+        <potion duration="5" amplifier="5">damage resistance</potion>
     </kit>
     <kit id="rkit" parents="both">
 		<helmet color="AA00AA" material="leather helmet"/>
@@ -36,9 +36,6 @@
         <chestplate color="5555FF" material="leather chestplate"/>
 		<leggings material="iron leggings"/>
 		<boots color="5555FF" material="leather boots"/>
-    </kit>
-	<kit id="spawn-resistance">
-        <potion duration="5" amplifier="5">damage resistance</potion>
     </kit>
 </kits>
 <spawns>
@@ -120,7 +117,6 @@
     <apply block="never" region="blue-wools" message="You may not modify blocks here!"/>
     <apply enter="only-blue" region="blue-spawn" message="You may not enter the enemy spawn!"/>
     <apply enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
-	<apply kit="spawn-resistance" region="spawn-falls"/>
 </regions>
 <kill-rewards>
     <kill-reward>
