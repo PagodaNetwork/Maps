@@ -23,7 +23,7 @@
         <item slot="4" amount="48" material="log"/>
 		<item slot="7" amount="32" material="glass"/>
         <item slot="8" amount="32" material="cooked beef"/>
-        <potion duration="5" amplifier="5">damage resistance</potion>
+        
     </kit>
     <kit id="rkit" parents="both">
 		<helmet color="AA00AA" material="leather helmet"/>
@@ -36,6 +36,9 @@
         <chestplate color="5555FF" material="leather chestplate"/>
 		<leggings material="iron leggings"/>
 		<boots color="5555FF" material="leather boots"/>
+    </kit>
+	<kit id="spawn-resistance">
+        <potion duration="5" amplifier="5">damage resistance</potion>
     </kit>
 </kits>
 <spawns>
