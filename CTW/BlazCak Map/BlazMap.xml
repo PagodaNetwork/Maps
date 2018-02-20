@@ -113,8 +113,8 @@
     <apply block="no-void" region="void" message="You may not modify blocks in the void area!"/>
     <apply block="never" region="blue-spawn" message="You may not modify blocks here!"/>
     <apply block="never" region="red-spawn" message="You may not modify blocks here!"/>
-    <apply enter="only-blue" region="blue-wools" message="You may not enter your own wool rooms!"/>
-    <apply enter="only-red" region="red-wools" message="You may not enter your own wool rooms!"/>
+    <apply enter="only-red" region="blue-wools" message="You may not enter your own wool rooms!"/>
+    <apply enter="only-blue" region="red-wools" message="You may not enter your own wool rooms!"/>
     <apply block="never" region="red-wools" message="You may not modify blocks here!"/>
     <apply block="never" region="blue-wools" message="You may not modify blocks here!"/>
     <apply enter="only-blue" region="blue-spawn" message="You may not enter the enemy spawn!"/>
