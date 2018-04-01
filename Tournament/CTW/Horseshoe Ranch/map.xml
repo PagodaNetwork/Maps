@@ -3,8 +3,8 @@
 	<version>1.0</version>
 	<objective>Capture the other team's wool.</objective>
 	<authors>
-		<author uuid="2958ea4c-3501-404e-88cc-12e8632f68cc" contribution="Layout, Aethetics, and XML"/>
-		<author uuid="a4266139-34f3-46c5-a730-f8828376a15a" contribution="Aethetical Improvements"/>
+		<author uuid="2958ea4c-3501-404e-88cc-12e8632f68cc" contribution="Layout, Aesthetics, and XML"/>
+		<author uuid="a4266139-34f3-46c5-a730-f8828376a15a" contribution="Aesthetical Improvements"/>
 	</authors>
 	<wools>
 		<wool team="red" color="light blue" location="-96.5,16,-12.5">
@@ -21,10 +21,10 @@
 	</teams>
 	<kits>
 		<kit id="spawn" force="true">
-			<item slot="0" material="iron sword" unbreakble="true"/>
-			<item slot="1" material="bow" enchantment="arrow infinite" unbreakble="true"/>
-			<item slot="2" material="iron pickaxe" unbreakble="true"/>
-			<item slot="3" material="iron axe" unbreakble="true"/>
+			<item slot="0" material="iron sword" unbreakable="true"/>
+			<item slot="1" material="bow" enchantment="arrow infinite" unbreakable="true"/>
+			<item slot="2" material="iron pickaxe" unbreakable="true"/>
+			<item slot="3" material="iron axe" unbreakable="true"/>
 			<item slot="4" material="log" amount="32"/>
 			<item slot="5" material="glass" amount="32"/>
 			<item slot="8" material="cooked beef" amount="64"/>
