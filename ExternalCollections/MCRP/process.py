@@ -1,7 +1,7 @@
-import os
+import os, shutil
 
 def work(directory, list):
-	directory = directory + '/maps'
+	directory = directory + os.path.sep + 'maps'
 	print(list)
 	files = os.listdir(directory)
 	listfile = open(list).readlines()
@@ -18,6 +18,7 @@ def work(directory, list):
 			if(lf == fl):
 				resFound = resFound + 1;
 				print("'" + fl + "' -> '" + lf + "' == '" + str(lf == fl) + "' #" + str(resFound))
+				shutil.rmtree(os.getcwd() + os.path.sep + directory + os.path.sep + f)
 	
 	print("Found " + str(resFound) + "/" + str(restrictedfiles))
 
