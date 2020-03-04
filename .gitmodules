@@ -1,0 +1,15 @@
+[submodule "ExternalCollections/MCRP/StratusCollection"]
+	path = ExternalCollections/MCRP/StratusCollection
+	url = https://github.com/MCResourcePile/stratus-maps.git
+[submodule "ExternalCollections/MCRP/PGMCollection"]
+	path = ExternalCollections/MCRP/PGMCollection
+	url = https://github.com/MCResourcePile/pgm-maps.git
+[submodule "ExternalCollections/MCRP/OCNCollectionGN"]
+	path = ExternalCollections/MCRP/OCNCollectionGN
+	url = https://github.com/MCResourcePile/overcast-maps-g-to-n.git
+[submodule "ExternalCollections/MCRP/OCNCollectionAF"]
+	path = ExternalCollections/MCRP/OCNCollectionAF
+	url = https://github.com/MCResourcePile/overcast-maps-a-to-f.git
+[submodule "ExternalCollections/MCRP/OCNCollectionOZ"]
+	path = ExternalCollections/MCRP/OCNCollectionOZ
+	url = https://github.com/MCResourcePile/overcast-maps-o-to-z.git
